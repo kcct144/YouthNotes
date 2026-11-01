@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="360" viewBox="0 0 500 360" role="img" aria-labelledby="title desc">
+  <title id="title">用方向和距离确定位置</title>
+  <desc id="desc">以小岛O为观测点，向上为北、向右为东。点A在小岛北偏西30度、距离5千米处，角度从正北方向向西量起。</desc>
+  <rect width="500" height="360" rx="12" fill="#fff"/>
+  <g fill="none" stroke="#94a3b8" stroke-width="2">
+    <path d="M70 240H440M270 330V44"/>
+    <path d="M78 235L70 240L78 245M432 235L440 240L432 245M265 52L270 44L275 52M265 322L270 330L275 322"/>
+  </g>
+  <path d="M270 240V186A54 54 0 0 0 243 193.235Z" fill="#e8f2fb"/>
+  <path d="M270 186A54 54 0 0 0 243 193.235" fill="none" stroke="#176aab" stroke-width="2"/>
+  <path d="M270 240L185 92.776" stroke="#176aab" stroke-width="3"/>
+  <g fill="#334155" font-family="Microsoft YaHei, sans-serif" font-size="20" text-anchor="middle">
+    <text x="270" y="29">北</text><text x="270" y="353">南</text>
+    <text x="49" y="247">西</text><text x="461" y="247">东</text>
+    <text x="284" y="270" text-anchor="start">O（小岛）</text>
+  </g>
+  <g fill="#176aab" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="700">
+    <text x="163" y="80">A</text>
+    <text x="282" y="183">30°</text>
+    <text x="140" y="177">5 千米</text>
+  </g>
+  <circle cx="270" cy="240" r="5" fill="#334155"/>
+  <circle cx="185" cy="92.776" r="5" fill="#176aab"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350" role="img" aria-labelledby="title desc">
+  <title id="title">等腰三角形的三线合一</title>
+  <desc id="desc">三角形ABC中AB等于AC。从顶角A到底边BC的线段AD，同时平分角BAC、平分底边BC，并且垂直于BC。图中相同角弧表示两个半角相等，底边上相同双短线表示BD等于DC，D处直角标记表示AD垂直于BC。两腰的单短线与底边的双短线区分不同的等长关系。</desc>
+  <rect width="600" height="350" rx="12" fill="#fff"/>
+  <path d="M170 75L50 270H290Z" fill="#eff6ff" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M170 75V270" fill="none" stroke="#176aab" stroke-width="3.5"/>
+  <path d="M150.09 107.36A38 38 0 0 0 170 113M170 113A38 38 0 0 0 189.91 107.36" fill="none" stroke="#176aab" stroke-width="2"/>
+  <path d="M170 252H188V270" fill="none" stroke="#176aab" stroke-width="2"/>
+  <path d="M105 169L115 176M225 176L235 169" fill="none" stroke="#334155" stroke-width="2"/>
+  <path d="M106 264V276M114 264V276M226 264V276M234 264V276" fill="none" stroke="#176aab" stroke-width="2"/>
+  <g font-family="Microsoft YaHei, sans-serif" text-anchor="middle" fill="#334155">
+    <text x="170" y="29" font-size="23">AB = AC</text>
+    <g font-family="Georgia, serif" font-style="italic" font-size="24"><text x="170" y="59">A</text><text x="33" y="291">B</text><text x="307" y="291">C</text><text x="170" y="297" fill="#176aab">D</text></g>
+    <text x="467" y="29" font-size="23" fill="#176aab">同一条线段 AD</text>
+    <g fill="#f8fafc" stroke="#cbd5e1"><rect x="352" y="48" width="230" height="76" rx="10"/><rect x="352" y="145" width="230" height="76" rx="10"/><rect x="352" y="242" width="230" height="76" rx="10"/></g>
+    <g font-size="21"><text x="467" y="76">顶角的平分线</text><text x="467" y="173">底边上的中线</text><text x="467" y="270">底边上的高</text></g>
+    <g font-size="23" fill="#176aab"><text x="467" y="109" font-size="21">∠BAD = ∠CAD</text><text x="467" y="206">BD = DC</text><text x="467" y="303">AD ⊥ BC</text></g>
+  </g>
+</svg>

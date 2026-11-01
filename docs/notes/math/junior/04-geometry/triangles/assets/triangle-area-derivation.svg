@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340" role="img" aria-labelledby="title desc">
+  <title id="title">两个相同的三角形拼成平行四边形</title>
+  <desc id="desc">左图为底边长b、高h、面积S的三角形。把另一个相同的三角形旋转180度后与它沿斜边拼合，得到右侧底边长仍为b、高仍为h的平行四边形。两个三角形面积相同，因此2S等于b乘h，S等于b乘h除以2。</desc>
+  <rect width="600" height="340" rx="12" fill="#fff"/>
+  <g font-family="Microsoft YaHei, sans-serif" text-anchor="middle" fill="#334155">
+    <text x="120" y="32" font-size="22">一个三角形</text>
+    <text x="425" y="32" font-size="22">两个相同的三角形拼在一起</text>
+    <path d="M40 210L90 100L200 210Z" fill="#dbeafe" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M320 210L370 100L480 210Z" fill="#dbeafe"/>
+    <path d="M370 100H530L480 210Z" fill="#ffedd5"/>
+    <path d="M320 210L370 100H530L480 210Z" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M370 100L480 210" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M90 100V210" fill="none" stroke="#176aab" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M90 198H102V210" fill="none" stroke="#176aab" stroke-width="1.8"/>
+    <path d="M530 100H555M480 210H555M555 100V210" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <path d="M543 100V112H555" fill="none" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M40 225V237M40 231H200M200 225V237M320 225V237M320 231H480M480 225V237" fill="none" stroke="#64748b" stroke-width="1.5"/>
+    <g font-family="Georgia, serif" font-size="24" font-style="italic">
+      <text x="120" y="257">b</text><text x="400" y="257">b</text>
+      <text x="76" y="165" fill="#176aab">h</text><text x="573" y="165" fill="#176aab">h</text>
+      <text x="130" y="190" fill="#176aab">S</text><text x="410" y="190" fill="#176aab">S</text><text x="465" y="140" fill="#9a3412">S</text>
+    </g>
+    <path d="M230 155H285M276 148L285 155L276 162" fill="none" stroke="#176aab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="425" y="286" font-size="21">平行四边形面积：2S = b × h</text>
+    <text x="300" y="325" font-size="23" fill="#176aab">所以，三角形面积 S = b × h ÷ 2</text>
+  </g>
+</svg>

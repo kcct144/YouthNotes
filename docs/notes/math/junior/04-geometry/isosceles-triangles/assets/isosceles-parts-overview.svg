@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="490" viewBox="0 0 680 490" role="img" aria-labelledby="title desc">
+  <title id="title">等腰三角形的腰、底边、顶角与底角</title>
+  <desc id="desc">左图三角形ABC中，AB与AC相等，都是腰；BC是底边，角A是顶角，角B与角C是底角。相同短线表示两腰相等。右上为等腰直角三角形，顶角90度、两个底角各45度；右下为等边三角形，三边都相等、三个角都是60度，也属于等腰三角形。</desc>
+  <rect width="680" height="490" rx="12" fill="#fff"/>
+  <path d="M400 24V470" stroke="#e2e8f0" stroke-width="1.5"/>
+  <path d="M200 85L90 295H310Z" fill="#eff6ff" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="none" stroke-width="2">
+    <path d="M139.7 187.2L150.3 192.8M249.7 192.8L260.3 187.2" stroke="#176aab"/>
+    <path d="M179.6 124A44 44 0 0 0 220.4 124" stroke="#b45309"/>
+    <path d="M120 295A30 30 0 0 0 103.92 268.43M280 295A30 30 0 0 1 296.08 268.43" stroke="#176aab"/>
+  </g>
+  <g fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M267 92H243L211 125"/>
+    <path d="M100 367V337L114 279M300 367V337L286 279"/>
+  </g>
+  <g font-family="Microsoft YaHei, sans-serif" text-anchor="middle" fill="#334155">
+    <g font-family="Georgia, serif" font-style="italic" font-size="25"><text x="200" y="65">A</text><text x="73" y="315">B</text><text x="327" y="315">C</text></g>
+    <g font-size="24" fill="#176aab"><text x="96" y="193">腰 AB</text><text x="310" y="193">腰 AC</text><text x="200" y="339">底边 BC</text></g>
+    <text x="317" y="99" font-size="23" fill="#b45309">顶角 ∠A</text>
+    <g font-size="23" fill="#176aab"><text x="100" y="397">底角 ∠B</text><text x="300" y="397">底角 ∠C</text><text x="200" y="448" font-size="25">AB = AC</text></g>
+    <path d="M535 65L470 130H600Z" fill="#eff6ff" stroke="#334155" stroke-width="2.3" stroke-linejoin="round"/>
+    <path d="M527.93 72.07L535 79.14L542.07 72.07M498.96 93.96L506.04 101.04M563.96 101.04L571.04 93.96" fill="none" stroke="#176aab" stroke-width="1.8"/>
+    <g font-size="17" fill="#176aab"><text x="491" y="122">45°</text><text x="579" y="122">45°</text></g>
+    <text x="535" y="181" font-size="22">等腰直角三角形</text>
+    <text x="535" y="211" font-size="19" fill="#64748b">两个底角各为 45°</text>
+    <path d="M535 260L470 372.5833H600Z" fill="#eff6ff" stroke="#334155" stroke-width="2.3" stroke-linejoin="round"/>
+    <path d="M498.17 313.79L506.83 318.79M563.17 318.79L571.83 313.79M535 367.58V377.58" fill="none" stroke="#176aab" stroke-width="1.8"/>
+    <g font-size="17" fill="#176aab"><text x="535" y="299">60°</text><text x="495" y="362">60°</text><text x="575" y="362">60°</text></g>
+    <text x="535" y="414" font-size="22">等边三角形</text>
+    <g font-size="19" fill="#64748b"><text x="535" y="443">三边相等</text><text x="535" y="470">也属于等腰三角形</text></g>
+  </g>
+</svg>

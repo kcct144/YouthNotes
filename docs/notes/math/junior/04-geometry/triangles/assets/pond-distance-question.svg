@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="260" viewBox="0 0 310 260" role="img" aria-labelledby="title desc">
+  <title id="title">池塘两岸的A、B两点与岸边测量点P</title>
+  <desc id="desc">A、B在池塘两岸，P在池塘一侧，线段PA、PB连接测量点与两岸。池塘使AB不能直接测量。示意图不按比例绘制。</desc>
+  <rect width="310" height="260" rx="12" fill="#fff"/>
+  <path d="M43 92C32 78 49 62 65 58C63 42 92 40 109 48C126 28 155 40 169 33C190 31 198 48 218 48C240 49 253 68 250 80C274 91 263 108 249 114C243 134 223 137 209 144C185 152 165 143 149 149C129 151 112 137 94 141C76 132 64 118 51 115Z" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  <path d="M87 77Q103 70 117 77M162 65Q180 58 195 65M128 113Q144 106 160 113M205 98Q220 92 234 99" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M40 100L170 220L260 100" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#334155"><circle cx="40" cy="100" r="3"/><circle cx="260" cy="100" r="3"/><circle cx="170" cy="220" r="3"/></g>
+  <g font-family="Georgia, serif" font-size="23" font-style="italic" text-anchor="middle" fill="#334155"><text x="25" y="105">A</text><text x="278" y="105">B</text><text x="170" y="247">P</text></g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="310" viewBox="0 0 520 310" role="img" aria-labelledby="title desc">
+  <title id="title">翻折直角三角形，拼成等边三角形</title>
+  <desc id="desc">三角形ABC的角C为直角、角A为30度。沿AC翻折，B落到D，D、C、B共线，AB等于AD，BC等于CD。角BAD为60度，故三角形ABD为等边三角形，AB等于BD等于2BC。虚线表示翻折后补出的边。</desc>
+  <rect width="520" height="310" rx="12" fill="#fff"/>
+  <path d="M260 50V230H363.92305Z" fill="#dbeafe"/>
+  <path d="M260 50L156.07695 230H260Z" fill="#f1f5f9"/>
+  <path d="M260 50V230H363.92305L260 50" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M260 50L156.07695 230H260" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+  <path d="M260 212H278V230" fill="none" stroke="#334155" stroke-width="2"/>
+  <path d="M260 92A42 42 0 0 0 281 86.37307M260 92A42 42 0 0 1 239 86.37307" fill="none" stroke="#176aab" stroke-width="2"/>
+  <g fill="none" stroke-width="2">
+    <path d="M204 224V236M312 224V236" stroke="#176aab"/>
+    <path d="M203.5 133.5L213.9 139.5M207.5 140.5L217.9 146.5M306.1 139.5L316.5 133.5M302.1 146.5L312.5 140.5" stroke="#334155"/>
+  </g>
+  <g font-family="Microsoft YaHei, sans-serif" text-anchor="middle" font-size="23" fill="#334155">
+    <text x="260" y="33">A</text><text x="382" y="247">B</text><text x="260" y="253">C</text><text x="138" y="247">D</text>
+    <text x="238" y="126" font-size="18" fill="#176aab">30°</text><text x="282" y="126" font-size="18" fill="#176aab">30°</text>
+    <text x="260" y="289" fill="#176aab">AB = BD = 2BC</text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="400" viewBox="0 0 520 400" role="img" aria-labelledby="title desc">
+  <title id="title">用坐标求三角形面积</title>
+  <desc id="desc">三角形顶点为A负1、2，B为2、1，C为2、5。以竖直边BC为底，底长为5减1等于4。A到BC的水平垂线交BC于D，高为2减负1等于3。面积为4乘3除以2等于6。</desc>
+  <rect width="520" height="400" rx="12" fill="#fff"/>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <path d="M80 82V370M128 82V370M224 82V370M272 82V370M320 82V370M368 82V370"/>
+    <path d="M80 82H368M80 130H368M80 178H368M80 226H368M80 274H368M80 370H368"/>
+  </g>
+  <path d="M128 226L272 274V82Z" fill="#e8f2fb" fill-opacity=".75"/>
+  <g fill="none" stroke="#334155" stroke-width="2">
+    <path d="M52 322H426M176 382V46"/>
+    <path d="M416 317L426 322L416 327M171 56L176 46L181 56"/>
+    <path d="M80 318V326M128 318V326M224 318V326M272 318V326M320 318V326M368 318V326"/>
+    <path d="M172 82H180M172 130H180M172 178H180M172 226H180M172 274H180M172 370H180"/>
+  </g>
+  <path d="M272 274V322" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <path d="M272 274L128 226L272 82" fill="none" stroke="#176aab" stroke-width="2.5"/>
+  <path d="M272 274V82" stroke="#22734f" stroke-width="3"/>
+  <path d="M128 226H272" fill="none" stroke="#176aab" stroke-width="2" stroke-dasharray="6 4"/>
+  <path d="M258 226V212H272" fill="none" stroke="#176aab" stroke-width="1.7"/>
+  <g fill="#334155" font-family="Microsoft YaHei, sans-serif" font-size="17" text-anchor="middle">
+    <text x="80" y="348">−2</text><text x="128" y="348">−1</text>
+    <text x="224" y="348">1</text><text x="272" y="348">2</text><text x="320" y="348">3</text><text x="368" y="348">4</text>
+    <text x="156" y="88">5</text><text x="156" y="136">4</text><text x="156" y="184">3</text><text x="156" y="232" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">2</text><text x="156" y="280">1</text><text x="156" y="376">−1</text>
+    <text x="160" y="348" font-style="italic">O</text>
+    <text x="427" y="348" font-size="20" font-style="italic">x</text><text x="196" y="50" font-size="20" font-style="italic">y</text>
+  </g>
+  <g fill="#176aab" font-family="Microsoft YaHei, sans-serif" font-size="20" font-weight="700">
+    <text x="34" y="211">A(−1, 2)</text>
+    <text x="286" y="294">B(2, 1)</text>
+    <text x="286" y="74">C(2, 5)</text>
+    <text x="286" y="233">D</text>
+    <text x="206" y="213" text-anchor="middle">高 = 3</text>
+    <text x="294" y="161" fill="#22734f">底 = 4</text>
+  </g>
+  <g fill="#176aab">
+    <circle cx="128" cy="226" r="4.5"/><circle cx="272" cy="274" r="4.5"/><circle cx="272" cy="82" r="4.5"/><circle cx="272" cy="226" r="3.5"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="390" viewBox="0 0 520 390" role="img" aria-labelledby="title desc">
+  <title id="title">坐标轴与点A的坐标</title>
+  <desc id="desc">横轴是x轴，向右为正；纵轴是y轴，向上为正，两轴交于原点O。点A在原点右方2个单位、上方3个单位，坐标为(2,3)。虚线分别连接点A与横轴上的2、纵轴上的3。</desc>
+  <rect width="520" height="390" rx="12" fill="#fff"/>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <path d="M72 84V348M116 84V348M204 84V348M248 84V348M292 84V348M336 84V348M380 84V348M424 84V348"/>
+    <path d="M72 84H424M72 128H424M72 172H424M72 216H424M72 304H424M72 348H424"/>
+  </g>
+  <g stroke="#334155" stroke-width="2" fill="none">
+    <path d="M48 260H466M160 364V48"/>
+    <path d="M456 255L466 260L456 265M155 58L160 48L165 58"/>
+    <path d="M72 256V264M116 256V264M204 256V264M248 256V264M292 256V264M336 256V264M380 256V264M424 256V264"/>
+    <path d="M156 84H164M156 128H164M156 172H164M156 216H164M156 304H164M156 348H164"/>
+  </g>
+  <path d="M160 128H248V260" fill="none" stroke="#176aab" stroke-width="2" stroke-dasharray="6 5"/>
+  <g font-family="Microsoft YaHei, sans-serif" font-size="18" text-anchor="middle" fill="#334155">
+    <text x="72" y="286">−2</text>
+    <text x="116" y="286">−1</text>
+    <text x="204" y="286">1</text>
+    <text x="248" y="286" fill="#176aab" font-weight="700">2</text>
+    <text x="292" y="286">3</text>
+    <text x="336" y="286">4</text>
+    <text x="380" y="286">5</text>
+    <text x="424" y="286">6</text>
+    <text x="138" y="90">4</text>
+    <text x="138" y="134" fill="#176aab" font-weight="700">3</text>
+    <text x="138" y="178">2</text>
+    <text x="138" y="222">1</text>
+    <text x="138" y="310">−1</text>
+    <text x="138" y="354">−2</text>
+    <text x="142" y="286" font-style="italic">O</text>
+    <text x="175" y="280" font-size="16">0</text>
+    <text x="180" y="32" text-anchor="start" font-size="20">y 轴（纵轴）</text>
+    <text x="356" y="321" text-anchor="start" font-size="20">x 轴（横轴）</text>
+    <text x="265" y="116" text-anchor="start" font-size="21" font-weight="700" fill="#176aab">A(2, 3)</text>
+  </g>
+  <circle cx="248" cy="128" r="5" fill="#176aab"/>
+  <circle cx="160" cy="260" r="3" fill="#334155"/>
+</svg>

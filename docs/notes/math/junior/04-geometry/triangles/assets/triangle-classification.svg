@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="650" viewBox="0 0 600 650" role="img" aria-labelledby="title desc">
+  <title id="title">三角形按角和按边分类</title>
+  <desc id="desc">按角分为锐角、直角、钝角三角形。等腰直角三角形是直角三角形的一种，两条直角边相等，两个锐角均为45度。按边分为三边不等的三角形和等腰三角形；等腰三角形至少两边相等，包含三边都相等的等边三角形。图中相同短线标记表示边长相等。</desc>
+  <rect width="600" height="650" rx="12" fill="#fff"/>
+  <g font-family="Microsoft YaHei, sans-serif" fill="#334155" text-anchor="middle">
+    <text x="20" y="29" text-anchor="start" font-size="22" fill="#176aab">按角分类</text>
+    <g font-size="22"><text x="100" y="61">锐角三角形</text><text x="300" y="61">直角三角形</text><text x="500" y="61">钝角三角形</text></g>
+    <g fill="#eff6ff" stroke="#334155" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M36 165L82 75L164 165Z"/>
+      <path d="M238 165V75L364 165Z"/>
+      <path d="M436 165L462 123L564 165Z"/>
+    </g>
+    <path d="M238 151H252V165" fill="none" stroke="#176aab" stroke-width="2"/>
+    <path d="M453.1 137.5A17 17 0 0 0 477.7 129.5" fill="none" stroke="#b45309" stroke-width="2"/>
+    <g font-size="18"><text x="100" y="199">三个角都小于 90°</text><text x="300" y="199">有一个角等于 90°</text><text x="500" y="199">有一个角大于 90°</text></g>
+    <path d="M300 208V225M295 220L300 225L305 220" fill="none" stroke="#176aab" stroke-width="2"/>
+    <rect x="70" y="232" width="460" height="136" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+    <path d="M105 348V248L205 348Z" fill="#eff6ff" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M105 334H119V348M100 298H110M155 343V353" fill="none" stroke="#176aab" stroke-width="2"/>
+    <g font-size="16" fill="#176aab" text-anchor="start"><text x="115" y="282">45°</text><text x="165" y="337">45°</text></g>
+    <g text-anchor="start"><text x="255" y="267" font-size="22" fill="#176aab">等腰直角三角形</text><text x="255" y="301" font-size="19">两条直角边相等</text><text x="255" y="335" font-size="19">直角三角形的一种</text></g>
+    <g transform="translate(0 160)">
+    <path d="M20 222H580" stroke="#e2e8f0"/>
+    <text x="20" y="252" text-anchor="start" font-size="22" fill="#176aab">按边分类</text>
+    <rect x="204" y="268" width="384" height="208" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+    <text x="396" y="295" font-size="21" fill="#176aab">等腰三角形（至少两边相等）</text>
+    <g fill="#fff" stroke="#334155" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M36 404L82 320L164 404Z"/>
+      <path d="M240 404L300 320L360 404Z"/>
+      <path d="M450 404L500 317.39746L550 404Z"/>
+    </g>
+    <g stroke="#176aab" stroke-width="2.5">
+      <path d="M265.1 358.5L274.9 365.5M325.1 365.5L334.9 358.5"/>
+      <path d="M470.7 358.2L479.3 363.2M520.7 363.2L529.3 358.2M500 399V409"/>
+    </g>
+    <g font-size="21"><text x="100" y="439">三边不等的三角形</text><text x="300" y="439">只有两边相等</text><text x="500" y="439">等边三角形</text></g>
+    <g font-size="18" fill="#64748b"><text x="100" y="463">三边各不相等</text><text x="500" y="463">三边都相等</text></g>
+    </g>
+  </g>
+</svg>

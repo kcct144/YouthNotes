@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="465" viewBox="0 0 520 465" role="img" aria-labelledby="title desc">
+  <title id="title">勾股定理的三边与正方形面积</title>
+  <desc id="desc">三角形ABC的角C为直角，直角边BC长a、CA长b，斜边AB长c。分别向三边外侧作正方形，面积为a的平方、b的平方、c的平方。两个直角边上的正方形面积之和，等于斜边上的正方形面积。</desc>
+  <rect width="520" height="465" rx="12" fill="#fff"/>
+  <g stroke="#64748b" stroke-width="2" stroke-linejoin="round">
+    <path d="M200 270H340V410H200Z" fill="#dbeafe"/>
+    <path d="M200 170V270H100V170Z" fill="#dcfce7"/>
+    <path d="M200 170L340 270L440 130L300 30Z" fill="#fef3c7"/>
+  </g>
+  <path d="M200 170V270H340Z" fill="#fff" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M200 253H217V270" fill="none" stroke="#334155" stroke-width="2"/>
+  <g font-family="Microsoft YaHei, sans-serif" text-anchor="middle" fill="#334155">
+    <g font-size="21"><text x="184" y="159">A</text><text x="356" y="288">B</text><text x="184" y="290">C</text></g>
+    <g font-family="Georgia, serif" font-style="italic" font-size="24"><text x="270" y="257">a</text><text x="217" y="231">b</text><text x="282" y="218" transform="rotate(35.538 282 218)">c</text></g>
+    <g font-family="Georgia, serif" font-style="italic" font-size="32"><text x="270" y="351" fill="#176aab">a²</text><text x="150" y="233" fill="#22734f">b²</text><text x="320" y="159" fill="#92400e">c²</text></g>
+    <text x="260" y="451" font-size="26" fill="#176aab">a² + b² = c²</text>
+  </g>
+</svg>

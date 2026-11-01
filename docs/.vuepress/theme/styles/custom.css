@@ -1,0 +1,91 @@
+:root {
+  --vp-c-brand-1: #176a80;
+  --vp-c-brand-2: #25869a;
+  --vp-c-brand-3: #42a0b0;
+  --vp-c-brand-soft: rgb(37 134 154 / 14%);
+  --youth-knowledge-color: #176aab;
+  --youth-knowledge-bg: #eaf3fc;
+  --youth-exam-color: #22734f;
+  --youth-exam-bg: #edf7f0;
+  --youth-pitfall-color: #b42332;
+  --youth-pitfall-bg: #fff0f2;
+}
+
+[data-theme='dark'] {
+  --vp-c-brand-1: #88d2df;
+  --vp-c-brand-2: #58b6c7;
+  --vp-c-brand-3: #3294a8;
+  --vp-c-brand-soft: rgb(88 182 199 / 16%);
+  --youth-knowledge-color: #86bdf8;
+  --youth-knowledge-bg: #1d2b3e;
+  --youth-exam-color: #88cfab;
+  --youth-exam-bg: #1e3028;
+  --youth-pitfall-color: #ff9ca6;
+  --youth-pitfall-bg: #382126;
+}
+
+/* 分类标题与页内目录共用配色，目录悬停或选中时也保留分类颜色。 */
+.vp-doc h2.note-heading--knowledge,
+:is(.vp-doc-aside-outline, .vp-local-nav-outline-dropdown) a.outline-link[data-note-type='knowledge'] {
+  color: var(--youth-knowledge-color);
+}
+
+.vp-doc h2.note-heading--exam,
+:is(.vp-doc-aside-outline, .vp-local-nav-outline-dropdown) a.outline-link[data-note-type='exam'] {
+  color: var(--youth-exam-color);
+}
+
+.vp-doc h2.note-heading--pitfall,
+:is(.vp-doc-aside-outline, .vp-local-nav-outline-dropdown) a.outline-link[data-note-type='pitfall'] {
+  color: var(--youth-pitfall-color);
+}
+
+.vp-doc h2.note-heading :is(a, code) {
+  color: inherit;
+}
+
+:is(.vp-doc-aside-outline, .vp-local-nav-outline-dropdown) a.outline-link[data-note-type].active {
+  font-weight: 600;
+}
+
+/* 提示块沿用相应分类的蓝、绿、红配色。 */
+.vp-doc .hint-container:is(.tip, .note, .warning) {
+  background-color: var(--hint-bg);
+  border-inline-start: 3px solid var(--hint-color);
+}
+
+.vp-doc .hint-container:is(.tip, .note, .warning) > .hint-container-title {
+  color: var(--hint-color);
+}
+
+.vp-doc .hint-container.tip {
+  --hint-color: var(--youth-knowledge-color);
+  --hint-bg: var(--youth-knowledge-bg);
+}
+
+.vp-doc .hint-container.note {
+  --hint-color: var(--youth-exam-color);
+  --hint-bg: var(--youth-exam-bg);
+}
+
+.vp-doc .hint-container.warning {
+  --hint-color: var(--youth-pitfall-color);
+  --hint-bg: var(--youth-pitfall-bg);
+}
+
+.vp-doc details {
+  margin-block: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.vp-doc summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vp-doc summary:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 4px;
+}

@@ -1,0 +1,589 @@
+/* Adapted from YouthNote; the accompanying MIT notice is in LICENSES/YouthNote-MIT.txt. */
+.subject-handbook {
+  --handbook-knowledge: var(--youth-knowledge-color);
+  --handbook-knowledge-bg: var(--youth-knowledge-bg);
+  --handbook-exam: var(--youth-exam-color);
+  --handbook-exam-bg: var(--youth-exam-bg);
+  --handbook-pitfall: var(--youth-pitfall-color);
+  --handbook-pitfall-bg: var(--youth-pitfall-bg);
+  --handbook-example-header: #f3f7f4;
+  --handbook-example-body: #ffffff;
+  --handbook-example-solution: #f8faf8;
+  --handbook-example-border: #cedad2;
+  --handbook-example-answer: #eaf3ed;
+}
+
+[data-theme='dark'] .subject-handbook {
+  --handbook-knowledge: var(--youth-knowledge-color);
+  --handbook-knowledge-bg: var(--youth-knowledge-bg);
+  --handbook-exam: var(--youth-exam-color);
+  --handbook-exam-bg: var(--youth-exam-bg);
+  --handbook-pitfall: var(--youth-pitfall-color);
+  --handbook-pitfall-bg: var(--youth-pitfall-bg);
+  --handbook-example-header: #252e29;
+  --handbook-example-body: #1e2122;
+  --handbook-example-solution: #202823;
+  --handbook-example-border: #3b4b41;
+  --handbook-example-answer: #283b30;
+}
+
+.subject-handbook .is-knowledge {
+  --handbook-accent: var(--handbook-knowledge);
+  --handbook-tint: var(--handbook-knowledge-bg);
+}
+
+.subject-handbook .is-exam {
+  --handbook-accent: var(--handbook-exam);
+  --handbook-tint: var(--handbook-exam-bg);
+}
+
+.subject-handbook .is-pitfall {
+  --handbook-accent: var(--handbook-pitfall);
+  --handbook-tint: var(--handbook-pitfall-bg);
+}
+
+.subject-handbook .handbook-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0 40px;
+}
+
+.subject-handbook .vp-doc .handbook-jump {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  padding: 17px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-top: 3px solid var(--handbook-accent);
+  border-radius: 8px;
+  background: var(--handbook-tint);
+  color: var(--handbook-accent);
+  text-decoration: none;
+}
+
+.subject-handbook .handbook-jump .handbook-nav-title {
+  width: fit-content;
+  color: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.subject-handbook .handbook-jump span {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.subject-handbook .vp-doc .handbook-jump:hover {
+  border-color: var(--handbook-accent);
+  color: var(--handbook-accent);
+}
+
+.subject-handbook .handbook-jump:focus-visible {
+  outline: 2px solid var(--handbook-accent);
+  outline-offset: 4px;
+}
+
+.subject-handbook .vp-doc h2.handbook-section {
+  margin-top: 56px;
+  padding: 17px 20px;
+  border: 0;
+  border-left: 4px solid var(--handbook-accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--handbook-tint);
+  color: var(--handbook-accent);
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.subject-handbook .handbook-section .vp-badge {
+  margin-left: 12px;
+  border-color: currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+.subject-handbook .vp-doc .knowledge-title {
+  color: var(--handbook-knowledge);
+}
+
+.subject-handbook .vp-doc .exam-title {
+  color: var(--handbook-exam);
+}
+
+.subject-handbook .vp-doc .pitfall-title {
+  color: var(--handbook-pitfall);
+}
+
+.subject-handbook .vp-doc h3 {
+  margin-top: 36px;
+  line-height: 1.6;
+}
+
+.subject-handbook .vp-doc h4 {
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+.subject-handbook .handbook-example {
+  --example-accent: var(--handbook-exam);
+  margin: 30px 0 42px;
+  border: 1px solid var(--handbook-example-border);
+  border-radius: 12px;
+  background: var(--handbook-example-body);
+  box-shadow: 0 3px 14px rgb(0 0 0 / 3%);
+}
+
+.subject-handbook .handbook-example.is-pitfall {
+  --example-accent: var(--handbook-pitfall);
+  --handbook-example-header: var(--handbook-pitfall-bg);
+  --handbook-example-solution: #fff8f9;
+  --handbook-example-border: #edc7cc;
+  --handbook-example-answer: #ffe5e9;
+}
+
+[data-theme='dark'] .subject-handbook .handbook-example.is-pitfall {
+  --handbook-example-solution: #302126;
+  --handbook-example-border: #62414a;
+  --handbook-example-answer: #442830;
+}
+
+.subject-handbook .vp-doc h4.example-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+  padding: 17px 22px;
+  border: 0;
+  border-bottom: 1px solid var(--handbook-example-border);
+  border-radius: 11px 11px 0 0;
+  background: var(--handbook-example-header);
+  color: var(--vp-c-text-1);
+}
+
+.subject-handbook .example-number {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border: 1px solid var(--handbook-example-border);
+  border-radius: 4px;
+  color: var(--example-accent);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.8;
+  font-variant-numeric: tabular-nums;
+}
+
+.subject-handbook .example-heading > .header-anchor {
+  width: 100%;
+}
+
+.subject-handbook .example-heading > .header-anchor > span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+}
+
+.subject-handbook .example-name {
+  flex: 1 1 180px;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.subject-handbook .example-source {
+  margin-left: auto;
+  max-width: 100%;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.subject-handbook .example-question,
+.subject-handbook .example-solution {
+  min-width: 0;
+  padding: 20px 22px 24px;
+}
+
+.subject-handbook .example-solution {
+  border-radius: 0 0 11px 11px;
+  background: var(--handbook-example-solution);
+}
+
+.subject-handbook .handbook-example details.example-disclosure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.subject-handbook .example-disclosure > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 15px 22px;
+  border-top: 1px dashed var(--handbook-example-border);
+  border-radius: 0 0 11px 11px;
+  background: var(--handbook-example-solution);
+  color: var(--example-accent);
+  font-size: 14px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.subject-handbook .example-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.subject-handbook .example-disclosure > summary::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.subject-handbook .example-disclosure > summary::after {
+  content: '点击展开';
+  margin-left: auto;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.subject-handbook .example-disclosure[open] > summary {
+  border-radius: 0;
+}
+
+.subject-handbook .example-disclosure[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.subject-handbook .example-disclosure[open] > summary::after {
+  content: '收起';
+}
+
+.subject-handbook .example-disclosure > summary:focus-visible {
+  outline: 2px solid var(--example-accent);
+  outline-offset: -3px;
+}
+
+.subject-handbook .vp-doc p.example-label {
+  display: none;
+}
+
+.subject-handbook .example-question > :last-child,
+.subject-handbook .example-answer > :last-child {
+  margin-bottom: 0;
+}
+
+.subject-handbook .example-question figure,
+.subject-handbook .example-solution figure {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.subject-handbook .example-answer {
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--example-accent);
+  border-radius: 0 6px 6px 0;
+  background: var(--handbook-example-answer);
+}
+
+.subject-handbook .vp-doc p.example-answer-label {
+  margin: 0 0 8px;
+  color: var(--example-accent);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.subject-handbook .example-answer .katex-display {
+  margin: 10px 0;
+}
+
+.subject-handbook .handbook-figure {
+  width: var(--handbook-figure-width);
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.subject-handbook .figure-small {
+  --handbook-figure-width: 320px;
+}
+
+.subject-handbook .figure-compact {
+  --handbook-figure-width: 240px;
+}
+
+.subject-handbook .figure-medium {
+  --handbook-figure-width: 440px;
+}
+
+.subject-handbook .figure-large {
+  --handbook-figure-width: 520px;
+}
+
+.subject-handbook .figure-wide {
+  --handbook-figure-width: 560px;
+}
+
+.subject-handbook .figure-comparison {
+  --handbook-figure-width: 640px;
+}
+
+.subject-handbook .handbook-figure-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 12px;
+  margin: 20px 0;
+}
+
+.subject-handbook .handbook-figure-group > .handbook-figure {
+  flex: 0 1 min(var(--handbook-figure-width), 320px);
+  width: min(var(--handbook-figure-width), 320px);
+  margin: 0;
+}
+
+.subject-handbook .handbook-figure-group > :is(.figure-large, .figure-wide, .figure-comparison) {
+  flex-basis: var(--handbook-figure-width);
+  width: var(--handbook-figure-width);
+}
+
+.subject-handbook .example-question.question-illustrated {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  align-items: center;
+  gap: 20px;
+}
+
+.subject-handbook .vp-doc .question-illustrated > p,
+.subject-handbook .question-illustrated > .handbook-figure {
+  margin-block: 0;
+}
+
+.subject-handbook .question-illustrated > .handbook-choice-grid {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.subject-handbook .vp-doc .handbook-figure figure,
+.subject-handbook .vp-doc .handbook-figure > p {
+  max-width: 100%;
+  margin: 0;
+}
+
+.subject-handbook .handbook-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.subject-handbook .handbook-figure.figure-fit img {
+  width: 100%;
+}
+
+.subject-handbook .handbook-figure figcaption {
+  display: none;
+}
+
+.subject-handbook .handbook-figure.with-caption figcaption {
+  display: block;
+  text-wrap: balance;
+}
+
+.subject-handbook .handbook-proof > summary {
+  cursor: pointer;
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.subject-handbook .handbook-proof[open] > summary {
+  margin-bottom: 16px;
+}
+
+.subject-handbook .handbook-proof-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.subject-handbook .handbook-proof-layout > .handbook-figure {
+  margin: 0 auto;
+}
+
+.subject-handbook .vp-doc .handbook-proof-steps > ol {
+  margin: 0;
+}
+
+.subject-handbook .handbook-proof-steps li + li {
+  margin-top: 12px;
+}
+
+@media (max-width: 639px) {
+  .subject-handbook .handbook-nav {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .subject-handbook .vp-doc .handbook-jump {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .subject-handbook .handbook-jump .handbook-nav-title {
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+
+  .subject-handbook .handbook-jump span {
+    text-align: right;
+  }
+
+  .subject-handbook .vp-doc h2.handbook-section {
+    padding: 14px 16px;
+    font-size: 22px;
+  }
+
+  .subject-handbook .vp-doc h4.example-heading {
+    padding: 14px 16px;
+    gap: 8px;
+  }
+
+  .subject-handbook .example-name {
+    font-size: 16px;
+  }
+
+  .subject-handbook .example-question,
+  .subject-handbook .example-solution {
+    padding: 17px 16px 20px;
+  }
+
+  .subject-handbook .example-answer {
+    padding: 12px;
+  }
+
+  .subject-handbook .example-disclosure > summary {
+    padding: 14px 16px;
+  }
+}
+
+/* Text choices wrap into as many readable cards as the available width allows. */
+.subject-handbook .vp-doc .handbook-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--choice-min-width, 7rem)), 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.subject-handbook .vp-doc .handbook-choice-grid.choices-medium {
+  --choice-min-width: 10rem;
+}
+
+.subject-handbook .vp-doc .handbook-choice-grid.choices-wide {
+  --choice-min-width: 14rem;
+}
+
+.subject-handbook .vp-doc .handbook-choice-grid > :is(p, .handbook-choice) {
+  min-width: 0;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--handbook-example-border);
+  border-radius: 8px;
+  background: var(--handbook-example-header);
+  overflow-wrap: anywhere;
+}
+
+.subject-handbook .vp-doc .handbook-choice > p {
+  margin: 0;
+}
+
+.subject-handbook .vp-doc .handbook-choice > p + p {
+  margin-top: 8px;
+}
+
+.subject-handbook .handbook-choice .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Image-choice questions: retain readable figures instead of shrinking four table cells. */
+.subject-handbook .handbook-option-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+  align-items: start;
+}
+
+.subject-handbook .handbook-option-grid .handbook-option {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.subject-handbook .handbook-option-grid .handbook-option p {
+  margin: 0;
+}
+
+.subject-handbook .handbook-option-grid .handbook-option img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 144px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.subject-handbook .handbook-option-grid .handbook-option figcaption {
+  margin: 8px 0 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  .subject-handbook .handbook-option-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+}
+
+/* Opt-in only when the outer A–D caption repeats the image plugin's neutral label. */
+.subject-handbook .handbook-option-grid.option-labels-only .handbook-option > figure > figcaption {
+  display: none;
+}
+
+/* Number-line and other detailed option diagrams need more room than icon choices. */
+.subject-handbook .handbook-option-grid.option-diagrams {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.subject-handbook .handbook-option-grid.option-diagrams .handbook-option img {
+  max-width: min(100%, 360px);
+}
+
+@media (max-width: 600px) {
+  .subject-handbook .handbook-option-grid.option-diagrams {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="316" viewBox="0 0 440 316" role="img" aria-labelledby="title desc">
+  <title id="title">教室座位表</title>
+  <desc id="desc">讲台在上方，四列座位从左向右编号，四排座位从前向后编号。小红位于第2列第3排。</desc>
+  <rect width="440" height="316" rx="12" fill="#fff"/>
+  <g font-family="Microsoft YaHei, sans-serif" font-size="17" text-anchor="middle" fill="#334155">
+    <rect x="158" y="16" width="172" height="34" rx="6" fill="#e2e8f0"/>
+    <text x="244" y="39">讲台</text>
+    <text x="130" y="85">第1列</text>
+    <text x="206" y="85" fill="#176aab" font-weight="700">第2列</text>
+    <text x="282" y="85">第3列</text>
+    <text x="358" y="85">第4列</text>
+    <text x="50" y="130">第1排</text>
+    <text x="50" y="180">第2排</text>
+    <text x="50" y="230" fill="#176aab" font-weight="700">第3排</text>
+    <text x="50" y="280">第4排</text>
+    <g fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5">
+      <rect x="100" y="106" width="60" height="36" rx="5"/>
+      <rect x="176" y="106" width="60" height="36" rx="5"/>
+      <rect x="252" y="106" width="60" height="36" rx="5"/>
+      <rect x="328" y="106" width="60" height="36" rx="5"/>
+      <rect x="100" y="156" width="60" height="36" rx="5"/>
+      <rect x="176" y="156" width="60" height="36" rx="5"/>
+      <rect x="252" y="156" width="60" height="36" rx="5"/>
+      <rect x="328" y="156" width="60" height="36" rx="5"/>
+      <rect x="100" y="206" width="60" height="36" rx="5"/>
+      <rect x="252" y="206" width="60" height="36" rx="5"/>
+      <rect x="328" y="206" width="60" height="36" rx="5"/>
+      <rect x="100" y="256" width="60" height="36" rx="5"/>
+      <rect x="176" y="256" width="60" height="36" rx="5"/>
+      <rect x="252" y="256" width="60" height="36" rx="5"/>
+      <rect x="328" y="256" width="60" height="36" rx="5"/>
+    </g>
+    <rect x="176" y="206" width="60" height="36" rx="5" fill="#eaf3fc" stroke="#176aab" stroke-width="2"/>
+    <text x="206" y="230" fill="#176aab" font-weight="700">小红</text>
+  </g>
+</svg>
