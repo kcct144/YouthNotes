@@ -1,40 +1,98 @@
-name: Deploy notes (manual)
+name: Deploy notes
 
 on:
+  push:
+    branches: [master]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
+# Never cancel during the live switch. GitHub can coalesce pending runs.
 concurrency:
-  group: notes-pages
+  group: youthnotes-production
   cancel-in-progress: false
 
 jobs:
-  docs:
+  deploy:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max_old_space_size=8192
+      DOCS_REPO: https://github.com/${{ github.repository }}
+      DOCS_BRANCH: master
+      DOCS_BASE: /
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 24
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm docs:check
-      - name: Build VuePress site
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-          DOCS_REPO: https://github.com/${{ github.repository }}
-          DOCS_BRANCH: ${{ github.ref_name }}
-          DOCS_BASE: ${{ vars.DOCS_BASE || format('/{0}/', github.event.repository.name) }}
-        run: pnpm docs:build
-      - name: Publish gh-pages branch
-        uses: crazy-max/ghaction-github-pages@v4
+          package-manager-cache: false
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
         with:
-          target_branch: gh-pages
-          build_dir: docs/.vuepress/dist
+          cache: true
+      - run: pnpm install --frozen-lockfile
+      - run: python3 -B -m unittest discover -s .github/scripts -p 'test_*.py' -v
+      - run: pnpm docs:check
+      - run: pnpm docs:build
+      - name: Package complete dist contents
+        run: |
+          set -euo pipefail
+          test -s docs/.vuepress/dist/index.html
+          tar -C docs/.vuepress/dist -cf "$RUNNER_TEMP/site.tar" .
+      - name: Upload and publish over verified SSH
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # API access also supports private repositories; never log token values.
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/master" --jq '.object.sha')
+          if [[ "$latest" != "$GITHUB_SHA" ]]; then
+            echo 'Skipping obsolete master commit; no server connection made.'
+            exit 0
+          fi
+          [[ "$DEPLOY_HOST" == '120.25.178.64' ]]
+          [[ "$DEPLOY_PORT" == '22' ]]
+          [[ "$DEPLOY_USER" == 'youthnotes-deploy' ]]
+          [[ -n "$DEPLOY_SSH_KEY" && -n "$DEPLOY_KNOWN_HOSTS" ]]
+          sshdir=$(mktemp -d "$RUNNER_TEMP/youthnotes-ssh.XXXXXX")
+          trap 'rm -rf -- "$sshdir"' EXIT
+          chmod 700 "$sshdir"
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$sshdir/key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$sshdir/known_hosts"
+          chmod 600 "$sshdir/key" "$sshdir/known_hosts"
+          opts=(-i "$sshdir/key" -o BatchMode=yes -o IdentitiesOnly=yes
+                -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$sshdir/known_hosts"
+                -o GlobalKnownHostsFile=/dev/null -o ConnectTimeout=15
+                -o ServerAliveInterval=15 -o ServerAliveCountMax=4
+                -o ForwardAgent=no -o ClearAllForwardings=yes)
+          target="$DEPLOY_USER@$DEPLOY_HOST"
+          root='/opt/1panel/apps/openresty/openresty/www/sites/youthnotes/index'
+          state="$root/.youthnotes-deploy"
+          release="$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          digest=$(sha256sum "$RUNNER_TEMP/site.tar" | cut -d ' ' -f 1)
+          # No sudo, no writes outside this site's document root.
+          ssh "${opts[@]}" -p "$DEPLOY_PORT" "$target" \
+            "set -eu; command -v python3 >/dev/null; test -d '$root'; test ! -L '$root'; test -w '$root'; test ! -L '$state'; umask 077; mkdir -p '$state'; chmod 700 '$state'; mkdir '$state/$release'; printf private > '$state/$release/probe'"
+          # Refuse to upload archives/backups to an HTTP-readable state path.
+          status=$(curl --silent --show-error --connect-timeout 15 --max-time 30 \
+            --output /dev/null --write-out '%{http_code}' \
+            "http://120.25.178.64:8081/.youthnotes-deploy/$release/probe")
+          [[ "$status" == '403' || "$status" == '404' ]]
+          scp "${opts[@]}" -P "$DEPLOY_PORT" "$RUNNER_TEMP/site.tar" "$target:$state/$release/site.tar"
+          ssh "${opts[@]}" -p "$DEPLOY_PORT" "$target" \
+            "python3 - publish '$release' '$GITHUB_RUN_NUMBER' '$GITHUB_SHA' '$digest'" \
+            < .github/scripts/publish.py
+      - name: Report public HTTP response (not full acceptance)
+        run: |
+          curl --fail --silent --show-error --retry 3 --connect-timeout 15 \
+            --max-time 30 --output /dev/null http://120.25.178.64:8081/

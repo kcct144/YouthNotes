@@ -1,9 +1,8 @@
 name: Check notes
 
+# master pushes are checked and built once by deploy.yml.
 on:
   pull_request:
-  push:
-    branches: [main, master]
 
 permissions:
   contents: read
@@ -11,15 +10,24 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max_old_space_size=8192
+      DOCS_REPO: https://github.com/${{ github.repository }}
+      DOCS_BRANCH: master
+      DOCS_BASE: /
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 24
-          cache: pnpm
+          package-manager-cache: false
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+        with:
+          cache: true
       - run: pnpm install --frozen-lockfile
+      - run: python3 -B -m unittest discover -s .github/scripts -p 'test_*.py' -v
       - run: pnpm docs:check
       - run: pnpm docs:build
