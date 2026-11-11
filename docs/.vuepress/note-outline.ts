@@ -1,13 +1,12 @@
 import { nextTick, onBeforeUnmount, onMounted } from 'vue'
 import { onContentUpdated } from 'vuepress/client'
+import { outlineTargetId } from './shared/note-types.ts'
 
 function colorOutlineLinks() {
   for (const link of document.querySelectorAll<HTMLAnchorElement>('a.outline-link')) {
-    const href = link.getAttribute('href') || ''
-    const heading = href.startsWith('#')
-      ? document.getElementById(decodeURIComponent(href.slice(1)))
-      : null
-    const type = heading?.matches('h2.note-heading') ? heading.dataset.noteType : undefined
+    const id = outlineTargetId(link.getAttribute('href') || '')
+    const heading = id ? document.getElementById(id) : null
+    const type = heading?.matches(':is(h2,h3,h4,h5,h6).note-heading') ? heading.dataset.noteType : undefined
     if (type) link.dataset.noteType = type
     else delete link.dataset.noteType
   }

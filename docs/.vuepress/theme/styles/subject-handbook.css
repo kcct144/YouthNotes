@@ -6,11 +6,11 @@
   --handbook-exam-bg: var(--youth-exam-bg);
   --handbook-pitfall: var(--youth-pitfall-color);
   --handbook-pitfall-bg: var(--youth-pitfall-bg);
-  --handbook-example-header: #f3f7f4;
+  --handbook-example-header: var(--youth-exam-bg);
   --handbook-example-body: #ffffff;
   --handbook-example-solution: #f8faf8;
   --handbook-example-border: #cedad2;
-  --handbook-example-answer: #eaf3ed;
+  --handbook-example-answer: var(--youth-exam-bg);
 }
 
 [data-theme='dark'] .subject-handbook {
@@ -20,11 +20,11 @@
   --handbook-exam-bg: var(--youth-exam-bg);
   --handbook-pitfall: var(--youth-pitfall-color);
   --handbook-pitfall-bg: var(--youth-pitfall-bg);
-  --handbook-example-header: #252e29;
+  --handbook-example-header: var(--youth-exam-bg);
   --handbook-example-body: #1e2122;
   --handbook-example-solution: #202823;
   --handbook-example-border: #3b4b41;
-  --handbook-example-answer: #283b30;
+  --handbook-example-answer: var(--youth-exam-bg);
 }
 
 .subject-handbook .is-knowledge {
@@ -43,6 +43,8 @@
 }
 
 .subject-handbook .handbook-nav {
+  --handbook-accent: var(--vp-c-brand-1);
+  --handbook-tint: var(--vp-c-bg-alt);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
@@ -139,15 +141,15 @@
 .subject-handbook .handbook-example.is-pitfall {
   --example-accent: var(--handbook-pitfall);
   --handbook-example-header: var(--handbook-pitfall-bg);
-  --handbook-example-solution: #fff8f9;
-  --handbook-example-border: #edc7cc;
-  --handbook-example-answer: #ffe5e9;
+  --handbook-example-solution: #fffbf5;
+  --handbook-example-border: #e7d4ba;
+  --handbook-example-answer: var(--youth-pitfall-bg);
 }
 
 [data-theme='dark'] .subject-handbook .handbook-example.is-pitfall {
-  --handbook-example-solution: #302126;
-  --handbook-example-border: #62414a;
-  --handbook-example-answer: #442830;
+  --handbook-example-solution: #2b261f;
+  --handbook-example-border: #594735;
+  --handbook-example-answer: var(--youth-pitfall-bg);
 }
 
 .subject-handbook .vp-doc h4.example-heading {

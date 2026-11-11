@@ -1,0 +1,40 @@
+.vp-doc .note-practice { margin: 28px 0 36px; padding: 20px 22px 14px; border: 1px solid var(--vp-c-border); border-left: 3px solid var(--youth-exam-color); border-radius: 3px; background: var(--vp-c-bg); min-width: 0; overflow-wrap: anywhere; }
+.note-practice-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; padding-bottom: 12px; border-bottom: 1px solid var(--vp-c-divider); }
+.vp-doc .note-practice-title { margin: 0; color: var(--vp-c-text-1); font-size: 15px; font-weight: 650; }
+.note-practice-kind { color: var(--youth-exam-color); font-size: 11px; }
+.vp-doc .note-practice-question p { margin-block: 18px; font-size: 15px; }
+.note-practice-options { border: 0; padding: 0; margin: 16px 0; min-width: 0; }
+.note-practice-options legend { padding: 0 0 8px; color: var(--vp-c-text-2); font-size: 12px; }
+.note-practice-option { display: grid; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 12px; margin-top: 7px; padding-left: 14px; border: 1px solid var(--vp-c-divider); border-radius: 3px; }
+.note-practice-option:hover { border-color: var(--youth-exam-color); }
+.note-practice-option.is-selected { border-color: var(--youth-exam-color); background: var(--youth-exam-bg); }
+.note-practice-option input { width: 17px; height: 17px; margin: 0; accent-color: var(--youth-exam-color); cursor: pointer; }
+.note-practice-option-text { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; min-width: 0; padding: 10px 14px 10px 0; cursor: pointer; }
+.note-practice-option-key { color: var(--vp-c-text-2); font-size: 12px; }
+.vp-doc .note-practice-option-text p { margin: 0; }
+.note-practice :is(button,textarea) { font: inherit; font-size: 13px; }
+.note-practice button { min-height: 40px; padding: 7px 14px; border: 1px solid var(--vp-c-border); border-radius: 3px; color: var(--vp-c-text-1); background: transparent; cursor: pointer; }
+.note-practice button:hover, .note-practice button[aria-pressed='true'] { border-color: var(--youth-exam-color); background: var(--youth-exam-bg); }
+.note-practice-actions { display: flex; gap: 12px; align-items: center; }
+.note-practice .note-practice-submit { border-color: var(--vp-c-brand-3); color: #fff; background: var(--vp-c-brand-3); }
+.note-practice .note-practice-submit:hover { background: color-mix(in srgb, var(--vp-c-brand-3) 88%, #000); }
+.note-practice button:disabled { opacity: .55; cursor: not-allowed; }
+.note-practice .note-practice-reset { border-color: transparent; color: var(--vp-c-text-2); text-decoration: underline; text-underline-offset: 4px; }
+.note-practice :is(button,input,textarea,summary):focus-visible { outline: 2px solid var(--youth-exam-color); outline-offset: 3px; }
+.note-practice-draft label { display: block; margin-top: 16px; font-size: 13px; font-weight: 600; }
+.note-practice textarea { display: block; width: 100%; box-sizing: border-box; margin: 8px 0 12px; padding: 12px; border: 1px solid var(--vp-c-border); border-radius: 3px; resize: vertical; color: var(--vp-c-text-1); background: var(--vp-c-bg-alt); line-height: 1.85; }
+.note-practice textarea::placeholder { color: var(--vp-c-text-3); opacity: 1; }
+.vp-doc .note-practice-feedback { margin: 12px 0 16px; padding: 0; color: var(--vp-c-text-2); font-size: 13px; line-height: 1.8; }
+.note-practice-feedback[data-result='incorrect'], .note-practice-error { color: var(--youth-pitfall-color); }
+.note-practice-feedback[data-result='correct'] { color: var(--youth-knowledge-color); }
+.vp-doc .note-practice-disclosure { margin: 0; padding: 0; border: 0; border-top: 1px solid var(--vp-c-divider); border-radius: 0; background: transparent; }
+.vp-doc .note-practice-disclosure > summary { padding: 11px 0; color: var(--youth-exam-color); font-size: 13px; }
+.vp-doc .note-practice-disclosure > div { margin: 0; padding: 0 0 14px; }
+.vp-doc .note-practice-disclosure[open] > summary { border-bottom: 0; }
+.vp-doc .note-practice-disclosure > div > :last-child { margin-bottom: 0; }
+.note-practice-self-check { border-top: 1px solid var(--vp-c-divider); }
+.note-practice-self-check button { margin-right: 8px; }
+.vp-doc .note-practice-self-check p { font-size: 13px; }
+.vp-doc .note-practice-notice { margin: 12px 0 0; color: var(--vp-c-text-2); font-size: 10px; letter-spacing: .02em; }
+.note-practice .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+@media (max-width: 480px) { .vp-doc .note-practice { padding: 16px 15px 12px; } .note-practice-option { padding-left: 12px; gap: 9px; } }

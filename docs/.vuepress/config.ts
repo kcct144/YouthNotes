@@ -3,6 +3,7 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 import { noteHeadingsPlugin } from './plugins/note-headings'
 import { noteRecordsPlugin } from './plugins/note-records'
+import { randomNotesPlugin } from './plugins/random-notes'
 
 // 尚未配置远程仓库时不生成编辑链接。部署参数见 docs/guide/maintenance.md。
 const docsRepo = process.env.DOCS_REPO
@@ -20,7 +21,7 @@ export default defineUserConfig({
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}logo.svg` }]],
   bundler: viteBundler(),
   shouldPrefetch: false,
-  plugins: [noteHeadingsPlugin, noteRecordsPlugin],
+  plugins: [noteHeadingsPlugin, noteRecordsPlugin, randomNotesPlugin],
   theme: plumeTheme({
     // 使用文件路径作为网址，避免启动或构建时自动改写学生的 Markdown。
     autoFrontmatter: false,

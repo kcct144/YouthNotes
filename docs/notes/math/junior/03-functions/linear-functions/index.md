@@ -10,18 +10,22 @@ noteContributors: []
 noteChanges: []
 ---
 
-一次函数的图象是一条直线。先认识式子中的 $k$ 和 $b$，再用它们判断增减、画图，以及解决交点和费用问题。
+一次函数的图象是一条直线。从定义与非零条件出发，读懂系数和图象，再学习用两个点确定表达式。
 
-<nav class="handbook-nav" aria-label="本章分区">
-  <a class="handbook-jump is-knowledge" href="#knowledge"><span class="handbook-nav-title">01 · 知识点</span><span>概念、关系与适用条件</span></a>
-  <a class="handbook-jump is-exam" href="#exam"><span class="handbook-nav-title">02 · 考点</span><span>题目分类和例题</span></a>
-  <a class="handbook-jump is-pitfall" href="#pitfalls"><span class="handbook-nav-title">03 · 坑点</span><span>辨析错因，检查遗漏</span></a>
+<nav class="handbook-nav" aria-label="本章教学路径">
+  <a class="handbook-jump" href="#definition"><span class="handbook-nav-title">01 · 定义判定</span><span>认形式，同时查非零条件</span></a>
+  <a class="handbook-jump" href="#graph-path"><span class="handbook-nav-title">02 · 系数与图象</span><span>看 k 的增减方向，看 b 的轴上位置</span></a>
+  <a class="handbook-jump" href="#determination"><span class="handbook-nav-title">03 · 两点求式</span><span>列方程、求系数、代回检验</span></a>
 </nav>
 
+**学习方式**：先读概念与图象，再独立尝试例题和专项练习；需要时展开提示与解析，检查自己的思路。
 
-## 【知识点】概念与依据 {#knowledge .handbook-section .is-knowledge}
+**选读提示**：平移、交点、实际应用等专题在后文，可用页内目录按需查阅。
 
-### 1. 一次函数与正比例函数 {#definition .knowledge-title}
+## 【知识点】从定义开始：先认形式，再查条件 {#knowledge .handbook-section .is-knowledge}
+
+
+### 【知识点】一次函数与正比例函数 {#definition .knowledge-title}
 
 形如 $y=kx+b$（$k\ne0$，$k,b$ 为常数）的函数，叫作==一次函数==，图象是一条直线
 
@@ -29,7 +33,99 @@ $b=0$ 时，得到 $y=kx$，叫作==正比例函数==，图象经过原点
 
 例如 $y=2x+1$ 是一次函数，$y=2x$ 和 $y=-2x$ 都是正比例函数
 
-### 2. 系数 k 与 b {#coefficients .knowledge-title}
+### 【坑点】指数为一，还要检查系数非零 {#definition-pit .pitfall-title}
+
+
+含参式写着一次幂，不等于实际存在一次项。指数、系数、常数项分开检查：正比例函数还要求实际常数项为零，一次函数则允许常数项非零。
+
+<article class="handbook-example is-pitfall" aria-labelledby="pitfall-1">
+
+#### <span class="example-number">辨析 01</span> <span class="example-name">含参定义的三个位置</span> <span class="example-source">知识清单例题</span> {#pitfall-1 .example-heading}
+
+<div class="example-question">
+
+<p class="example-label">题目</p>
+
+（1）$y=(k-2)x^{k^2-3}+b+1$ 是正比例函数，求 $k,b$。
+
+（2）$y=(m-2)x^{m^2-3}+1$ 是一次函数，求 $m$。
+
+</div>
+
+<details class="example-disclosure">
+<summary>答案与解析</summary>
+
+<div class="example-solution">
+
+<p class="example-label">解析</p>
+
+（1）同时要求 $k^2-3=1$、$k-2\ne0$、$b+1=0$。指数条件给 $k=\pm2$，非零系数条件排除 $2$，所以 $k=-2,b=-1$，整体变为 $y=-4x$。
+
+（2）指数条件给 $m=\pm2$，但 $m=2$ 时一次项消失，只剩常函数 $y=1$，不合题意。故 $m=-2$，得到 $y=-4x+1$。常数项 $1$ 不妨碍一次函数的定义。
+
+<div class="example-answer">
+
+<p class="example-answer-label">本题结论</p>
+
+（1）$k=-2,b=-1$。（2）$m=-2$。
+
+</div>
+
+</div>
+
+</details>
+
+</article>
+
+#### 【考点】定义判定专项练习（原创）
+
+<NotePractice mode="single" answer="B" choices="A,B,C,D" title="专项练习 1（原创）">
+
+已知 $y=(m-1)x^{m^2}+2$ 是一次函数，$m$ 应取哪个值？按“指数为 $1$、一次项系数非零”同时检查。
+
+<template #option-a>
+
+$m=0$
+
+</template>
+
+<template #option-b>
+
+$m=-1$
+
+</template>
+
+<template #option-c>
+
+$m=1$
+
+</template>
+
+<template #option-d>
+
+$m=2$
+
+</template>
+
+<template #hint>
+
+先由 $m^2=1$ 得到候选值，再检查 $m-1$ 是否为零。常数项 $2$ 不影响一次函数的判定。
+
+</template>
+
+<template #answer>
+
+选 B。由 $m^2=1$ 得 $m=\pm1$；由 $m-1\ne0$ 排除 $m=1$，故 $m=-1$。
+
+检验：代入得到 $y=-2x+2$，指数为 $1$、系数 $-2\ne0$。A 不含一次项，C 的一次项系数为 $0$，D 给 $y=x^4+2$，均不是一次函数。
+
+</template>
+
+</NotePractice>
+
+## 【知识点】把 k、b 与图象对应起来 {#graph-path}
+
+### 【知识点】系数 k 与 b {#coefficients .knowledge-title}
 
 <div class="handbook-figure figure-large figure-fit">
 
@@ -51,7 +147,11 @@ $b=0$ 时，得到 $y=kx$，叫作==正比例函数==，图象经过原点
 2. $k<0$：$y$ 随 $x$ 增大而减小
 3. $b>0$、$b=0$、$b<0$：分别与 $y$ 轴正半轴、原点、负半轴相交
 
-### 3. 与坐标轴的交点 {#intercepts .knowledge-title}
+#### 【坑点】截距的正负不能决定增减
+
+$y=-x+2$ 的 $b=2>0$，却因 $k=-1<0$ 而递减。检查时先圈出 $x$ 的完整系数，再单独读取常数项；两件事不能互相代替。
+
+### 【知识点】与坐标轴的交点 {#intercepts .knowledge-title}
 
 | 交点 | 代入什么 | 坐标 |
 | --- | --- | --- |
@@ -60,211 +160,7 @@ $b=0$ 时，得到 $y=kx$，叫作==正比例函数==，图象经过原点
 
 描出两个不同的点，过它们画直线，就能得到一次函数的图象
 
-### 4. 一次函数图象的平移 {#translation .knowledge-title}
-
-平移后 $k$ 不变。设 $m,n>0$
-
-| 方向 | 原式 $y=kx+b$ 变为 |
-| --- | --- |
-| 右移 $m$ | $y=k(x-m)+b$ |
-| 左移 $m$ | $y=k(x+m)+b$ |
-| 上移 $n$ | $y=kx+b+n$ |
-| 下移 $n$ | $y=kx+b-n$ |
-
-例如 $y=2x$ 右移 $1$ 个单位，得到 $y=2(x-1)$，原点移到 $(1,0)$
-
-## 【考点】方法与例题 {#exam .handbook-section .is-exam}
-
-
-
-### 1. 待定系数法 {#determination .exam-title}
-
-已经知道是一次函数，但不知道 $k,b$，就先设出式子，再用已知条件求系数。这叫作==待定系数法==。
-
-1. 设式：一次函数设 $y=kx+b$；正比例函数设 $y=kx$，均要求 $k\ne0$。
-2. 代点：把每个点的横、纵坐标成对代入，列方程。
-3. 求系数、回查：解出 $k,b$，代回原条件，并检查 $k\ne0$。
-
-两点 $(x_1,y_1)$、$(x_2,y_2)$ 的横坐标不同时，也可直接算：
-
-$$k=\frac{y_2-y_1}{x_2-x_1},\qquad b=y_1-kx_1.$$
-
-公式来自两式相减消去 $b$。两点若完全相同，只给了一次条件；若横坐标相同、纵坐标不同，则不可能属于同一个函数。实际问题还须先有“一次变化”的依据，不能仅凭两次观测就断定整个过程是一次函数。
-
-### 2. 两条直线的交点 {#intersections .exam-title}
-
-交点同时在两条直线上，所以它的坐标要同时满足两个函数式。把 $y=k_1x+b_1$、$y=k_2x+b_2$ 联立：
-
-$$k_1x+b_1=k_2x+b_2\quad\Longrightarrow\quad(k_1-k_2)x=b_2-b_1.$$
-
-先求 $x$，再代入任意一个原式求 $y$。
-
-| 系数关系 | 两条直线 | 对应方程组 |
-| --- | --- | --- |
-| $k_1\ne k_2$ | 相交，有一个交点 | 唯一解 |
-| $k_1=k_2$，$b_1\ne b_2$ | 平行，没有交点 | 无解 |
-| $k_1=k_2$，$b_1=b_2$ | 重合 | 无穷多解 |
-
-实际问题只取线段或射线时，算出的交点还要落在两者共同允许的范围内。
-
-补充：垂直的判定。 两轴单位长度相同时，对两条能写成 $y=kx+b$ 的直线，有 $k_1k_2=-1$ 当且仅当它们垂直。垂直时，两条直线与横轴形成的锐角互余，所对应直角三角形的两直角边比互为倒数；一条上升、一条下降，斜率符号相反，因而乘积为 $-1$。竖直线不能写成这种形式，应直接用几何关系判断。
-
-### 3. 用图象解方程与不等式 {#equations-inequalities .exam-title}
-
-方程找交点，不等式找图象的上、下方；最后读横坐标。
-
-| 要求什么 | 在图上找什么 | 答什么 |
-| --- | --- | --- |
-| $kx+b=0$ | 与 $x$ 轴的交点 | 交点横坐标 |
-| $kx+b=c$ | 与直线 $y=c$ 的交点 | 交点横坐标 |
-| 两个函数值相等 | 两图的交点 | 交点横坐标 |
-| 第一个函数值小于第二个 | 同一个 $x$ 处，第一条图象在第二条下方的部分 | 相应的 $x$ 的范围 |
-
-有“等于”时保留符合条件的交点，严格大于或小于时排除交点。比较两个函数时，要看两条图象的相对高低；只有与 $0$ 比较时，才看它在横轴上方还是下方。
-
-### 4. 一次函数的实际应用 {#application .exam-title}
-
-先把“固定部分”和“每次增加的部分”分开。例如剧院第 $1$ 排有 $50$ 个座位，以后每排增加 $3$ 个，则第 $x$ 排有
-
-$$y=50+3(x-1)=3x+47.$$
-
-从第 $1$ 排到第 $x$ 排，只增加了 $x-1$ 次；这里的 $47$ 不表示现实中有“第 $0$ 排”。一般地，已知 $x=x_0$ 时 $y=y_0$，每增加一单位 $x$，$y$ 改变 $k$，则
-
-$$y=y_0+k(x-x_0).$$
-
-求最值，先定范围，再看增减。
-
-| 允许范围有最小、最大输入 | 最小输出在哪里 | 最大输出在哪里 |
-| --- | --- | --- |
-| $k>0$ | 最小输入处 | 最大输入处 |
-| $k<0$ | 最大输入处 | 最小输入处 |
-
-范围由预算、总量、比例、时间和整数要求等共同决定。端点必须能取到；件数的下界不是整数时，要取满足条件的第一个整数，不能四舍五入。范围没有某个端点时，也可能没有对应最值。
-
-收费规则、运动状态等发生改变时，应分段列式，不能用同一条直线套完整过程。
-
-
-### 5. 求函数解析式 {#find-formula .exam-title}
-
-先看是一次函数还是正比例函数，再设式、代入点坐标求系数。若点由对称关系给出，先求完整坐标；若给轴上交点，先把相应坐标设为 $0$。最后回代原条件。
-
-<article class="handbook-example" aria-labelledby="example-1">
-
-#### <span class="example-number">例题 01</span> <span class="example-name">一次函数与正比例函数的定式</span> <span class="example-source">知识清单例题·合组；第（2）问 2024 陕西</span> {#example-1 .example-heading}
-
-<div class="example-question">
-
-<p class="example-label">题目</p>
-
-（1）已知 $y$ 是 $x$ 的一次函数，$x=-2$ 时 $y=-3$，$x=1$ 时 $y=3$。求解析式。
-
-（2）一个正比例函数经过 $A(2,m),B(n,-6)$，且两点关于原点对称。这个函数的表达式是（　）。
-
-<div class="handbook-choice-grid">
-
-<div class="handbook-choice">
-
-A. $y=3x$
-
-</div>
-
-<div class="handbook-choice">
-
-B. $y=-3x$
-
-</div>
-
-<div class="handbook-choice">
-
-C. $y=\dfrac13x$
-
-</div>
-
-<div class="handbook-choice">
-
-D. $y=-\dfrac13x$
-
-</div>
-
-</div>
-
-</div>
-
-<details class="example-disclosure">
-<summary>答案与解析</summary>
-
-<div class="example-solution">
-
-<p class="example-label">解析</p>
-
-（1）设 $y=kx+b$，代入两点：
-
-$$\begin{cases}-2k+b=-3,\\k+b=3.\end{cases}$$
-
-相减得 $3k=6$，所以 $k=2,b=1$，函数为 $y=2x+1$。代入两个原输入，分别得到 $-3,3$，正确。
-
-（2）关于原点对称的两个坐标分别相反，所以 $m=6,n=-2$。设 $y=kx$，用 $A(2,6)$ 得 $6=2k$，即 $k=3$。另点也满足 $-6=3\times(-2)$。
-
-<div class="example-answer">
-
-<p class="example-answer-label">本题结论</p>
-
-（1）$y=2x+1$。（2）选 A，$y=3x$。
-
-</div>
-
-</div>
-
-</details>
-
-</article>
-
-
-<article class="handbook-example" aria-labelledby="example-2">
-
-#### <span class="example-number">例题 02</span> <span class="example-name">成正比例的是两个整体</span> <span class="example-source">知识清单例题</span> {#example-2 .example-heading}
-
-<div class="example-question">
-
-<p class="example-label">题目</p>
-
-已知 $y+5$ 与 $3x+4$ 成正比例，$x=1$ 时 $y=2$。
-
-（1）求 $y$ 与 $x$ 的函数关系式。（2）求 $x=-1$ 时的 $y$。
-
-</div>
-
-<details class="example-disclosure">
-<summary>答案与解析</summary>
-
-<div class="example-solution">
-
-<p class="example-label">解析</p>
-
-（1）题目中的两个整体是 $y+5$ 和 $3x+4$，应设
-
-$$y+5=k(3x+4),\qquad k\ne0.$$
-
-代入 $x=1,y=2$，得 $7=7k$，所以 $k=1$。于是 $y+5=3x+4$，还原为 $y=3x-1$。
-
-（2）代入 $x=-1$，得 $y=-3-1=-4$。若一开始写成 $y=kx$，就丢失了题目两个整体中的常数项。
-
-<div class="example-answer">
-
-<p class="example-answer-label">本题结论</p>
-
-（1）$y=3x-1$。（2）$y=-4$。
-
-</div>
-
-</div>
-
-</details>
-
-</article>
-
-
-### 6. 比较函数值 {#monotonicity .exam-title}
+### 【考点】比较函数值 {#monotonicity .exam-title}
 
 先找一次项的完整系数，再判断增减。例如 $y=(1-3k)x+2$ 的斜率是 $1-3k$。已知横坐标大小后，斜率为正，函数值同向比较；斜率为负，大小关系反过来。
 
@@ -443,8 +339,7 @@ D. $y_1\ge y_2$
 
 </article>
 
-
-### 7. 根据系数选图象 {#select-graph .exam-title}
+### 【考点】根据系数选图象 {#select-graph .exam-title}
 
 先看一次项系数决定右升还是右降，再看常数项决定纵轴交点在上还是在下。不能只满足其中一条就选图。
 
@@ -616,8 +511,240 @@ D. 经过第一、二、三象限
 
 </article>
 
+## 【考点】用两个点确定表达式 {#exam .handbook-section .is-exam}
 
-### 8. 求交点与面积 {#intersection-method .exam-title}
+
+### 【考点】待定系数法 {#determination .exam-title}
+
+已经知道是一次函数，但不知道 $k,b$，就先设出式子，再用已知条件求系数。这叫作==待定系数法==。
+
+1. 设式：一次函数设 $y=kx+b$；正比例函数设 $y=kx$，均要求 $k\ne0$。
+2. 代点：把每个点的横、纵坐标成对代入，列方程。
+3. 求系数、回查：解出 $k,b$，代回原条件，并检查 $k\ne0$。
+
+两点 $(x_1,y_1)$、$(x_2,y_2)$ 的横坐标不同时，也可直接算：
+
+$$k=\frac{y_2-y_1}{x_2-x_1},\qquad b=y_1-kx_1.$$
+
+公式来自两式相减消去 $b$。两点若完全相同，只给了一次条件；若横坐标相同、纵坐标不同，则不可能属于同一个函数。实际问题还须先有“一次变化”的依据，不能仅凭两次观测就断定整个过程是一次函数。
+
+#### 【坑点】两点未必确定一次函数
+
+两点横坐标不同，才能用差商求 $k$；还要检查求得的 $k\ne0$。例如 $(0,2)$、$(1,2)$ 只确定常函数 $y=2$，不能称作一次函数。求式后必须把两个点成对代回，并结合情境检查自变量范围。
+
+### 【考点】求函数解析式 {#find-formula .exam-title}
+
+先看是一次函数还是正比例函数，再设式、代入点坐标求系数。若点由对称关系给出，先求完整坐标；若给轴上交点，先把相应坐标设为 $0$。最后回代原条件。
+
+<article class="handbook-example" aria-labelledby="example-1">
+
+#### <span class="example-number">例题 01</span> <span class="example-name">一次函数与正比例函数的定式</span> <span class="example-source">知识清单例题·合组；第（2）问 2024 陕西</span> {#example-1 .example-heading}
+
+<div class="example-question">
+
+<p class="example-label">题目</p>
+
+（1）已知 $y$ 是 $x$ 的一次函数，$x=-2$ 时 $y=-3$，$x=1$ 时 $y=3$。求解析式。
+
+（2）一个正比例函数经过 $A(2,m),B(n,-6)$，且两点关于原点对称。这个函数的表达式是（　）。
+
+<div class="handbook-choice-grid">
+
+<div class="handbook-choice">
+
+A. $y=3x$
+
+</div>
+
+<div class="handbook-choice">
+
+B. $y=-3x$
+
+</div>
+
+<div class="handbook-choice">
+
+C. $y=\dfrac13x$
+
+</div>
+
+<div class="handbook-choice">
+
+D. $y=-\dfrac13x$
+
+</div>
+
+</div>
+
+</div>
+
+<details class="example-disclosure">
+<summary>答案与解析</summary>
+
+<div class="example-solution">
+
+<p class="example-label">解析</p>
+
+（1）设 $y=kx+b$，代入两点：
+
+$$\begin{cases}-2k+b=-3,\\k+b=3.\end{cases}$$
+
+相减得 $3k=6$，所以 $k=2,b=1$，函数为 $y=2x+1$。代入两个原输入，分别得到 $-3,3$，正确。
+
+（2）关于原点对称的两个坐标分别相反，所以 $m=6,n=-2$。设 $y=kx$，用 $A(2,6)$ 得 $6=2k$，即 $k=3$。另点也满足 $-6=3\times(-2)$。
+
+<div class="example-answer">
+
+<p class="example-answer-label">本题结论</p>
+
+（1）$y=2x+1$。（2）选 A，$y=3x$。
+
+</div>
+
+</div>
+
+</details>
+
+</article>
+
+
+<article class="handbook-example" aria-labelledby="example-2">
+
+#### <span class="example-number">例题 02</span> <span class="example-name">成正比例的是两个整体</span> <span class="example-source">知识清单例题</span> {#example-2 .example-heading}
+
+<div class="example-question">
+
+<p class="example-label">题目</p>
+
+已知 $y+5$ 与 $3x+4$ 成正比例，$x=1$ 时 $y=2$。
+
+（1）求 $y$ 与 $x$ 的函数关系式。（2）求 $x=-1$ 时的 $y$。
+
+</div>
+
+<details class="example-disclosure">
+<summary>答案与解析</summary>
+
+<div class="example-solution">
+
+<p class="example-label">解析</p>
+
+（1）题目中的两个整体是 $y+5$ 和 $3x+4$，应设
+
+$$y+5=k(3x+4),\qquad k\ne0.$$
+
+代入 $x=1,y=2$，得 $7=7k$，所以 $k=1$。于是 $y+5=3x+4$，还原为 $y=3x-1$。
+
+（2）代入 $x=-1$，得 $y=-3-1=-4$。若一开始写成 $y=kx$，就丢失了题目两个整体中的常数项。
+
+<div class="example-answer">
+
+<p class="example-answer-label">本题结论</p>
+
+（1）$y=3x-1$。（2）$y=-4$。
+
+</div>
+
+</div>
+
+</details>
+
+</article>
+
+### 【考点】从两点到图象的综合自查（原创）
+
+<NotePractice mode="self" title="专项练习 2（原创）">
+
+已知一次函数经过 $A(-1,5)$、$B(2,-1)$。求解析式、与 $y$ 轴的交点和 $x=4$ 时的函数值，并判断增减性；最后回代两个已知点检验。
+
+<template #hint>
+
+两点横坐标不同，可先求 $k=\dfrac{-1-5}{2-(-1)}$，再求 $b$。不要把截距的正负当作增减性的依据。
+
+</template>
+
+<template #answer>
+
+设 $y=kx+b$，由两点得 $-k+b=5$、$2k+b=-1$。相减得 $3k=-6$，故 $k=-2$，再得 $b=3$。
+
+所以 $y=-2x+3$；与 $y$ 轴交于 $(0,3)$；$x=4$ 时 $y=-5$。因 $k=-2<0$，$y$ 随 $x$ 增大而减小，不能因 $b=3>0$ 就判断递增。
+
+检验：$-2\times(-1)+3=5$、$-2\times2+3=-1$，且 $k\ne0$。自查时逐项核对表达式、轴上交点、函数值、增减性和两个点的回代，不只核对最终式子。
+
+</template>
+
+</NotePractice>
+
+## 继续探索：图象的平移与实际应用 {#further-topics}
+
+读懂基础关系后，可以继续研究图象的平移、直线交点和实际应用。每次计算都要回到题设，核对取值范围和实际含义。
+
+### 【知识点】一次函数图象的平移 {#translation .knowledge-title}
+
+平移后 $k$ 不变。设 $m,n>0$
+
+| 方向 | 原式 $y=kx+b$ 变为 |
+| --- | --- |
+| 右移 $m$ | $y=k(x-m)+b$ |
+| 左移 $m$ | $y=k(x+m)+b$ |
+| 上移 $n$ | $y=kx+b+n$ |
+| 下移 $n$ | $y=kx+b-n$ |
+
+例如 $y=2x$ 右移 $1$ 个单位，得到 $y=2(x-1)$，原点移到 $(1,0)$
+
+### 【考点】两条直线的交点 {#intersections .exam-title}
+
+交点同时在两条直线上，所以它的坐标要同时满足两个函数式。把 $y=k_1x+b_1$、$y=k_2x+b_2$ 联立：
+
+$$k_1x+b_1=k_2x+b_2\quad\Longrightarrow\quad(k_1-k_2)x=b_2-b_1.$$
+
+先求 $x$，再代入任意一个原式求 $y$。
+
+| 系数关系 | 两条直线 | 对应方程组 |
+| --- | --- | --- |
+| $k_1\ne k_2$ | 相交，有一个交点 | 唯一解 |
+| $k_1=k_2$，$b_1\ne b_2$ | 平行，没有交点 | 无解 |
+| $k_1=k_2$，$b_1=b_2$ | 重合 | 无穷多解 |
+
+实际问题只取线段或射线时，算出的交点还要落在两者共同允许的范围内。
+
+补充：垂直的判定。 两轴单位长度相同时，对两条能写成 $y=kx+b$ 的直线，有 $k_1k_2=-1$ 当且仅当它们垂直。垂直时，两条直线与横轴形成的锐角互余，所对应直角三角形的两直角边比互为倒数；一条上升、一条下降，斜率符号相反，因而乘积为 $-1$。竖直线不能写成这种形式，应直接用几何关系判断。
+
+### 【考点】用图象解方程与不等式 {#equations-inequalities .exam-title}
+
+方程找交点，不等式找图象的上、下方；最后读横坐标。
+
+| 要求什么 | 在图上找什么 | 答什么 |
+| --- | --- | --- |
+| $kx+b=0$ | 与 $x$ 轴的交点 | 交点横坐标 |
+| $kx+b=c$ | 与直线 $y=c$ 的交点 | 交点横坐标 |
+| 两个函数值相等 | 两图的交点 | 交点横坐标 |
+| 第一个函数值小于第二个 | 同一个 $x$ 处，第一条图象在第二条下方的部分 | 相应的 $x$ 的范围 |
+
+有“等于”时保留符合条件的交点，严格大于或小于时排除交点。比较两个函数时，要看两条图象的相对高低；只有与 $0$ 比较时，才看它在横轴上方还是下方。
+
+### 【考点】一次函数的实际应用 {#application .exam-title}
+
+先把“固定部分”和“每次增加的部分”分开。例如剧院第 $1$ 排有 $50$ 个座位，以后每排增加 $3$ 个，则第 $x$ 排有
+
+$$y=50+3(x-1)=3x+47.$$
+
+从第 $1$ 排到第 $x$ 排，只增加了 $x-1$ 次；这里的 $47$ 不表示现实中有“第 $0$ 排”。一般地，已知 $x=x_0$ 时 $y=y_0$，每增加一单位 $x$，$y$ 改变 $k$，则
+
+$$y=y_0+k(x-x_0).$$
+
+求最值，先定范围，再看增减。
+
+| 允许范围有最小、最大输入 | 最小输出在哪里 | 最大输出在哪里 |
+| --- | --- | --- |
+| $k>0$ | 最小输入处 | 最大输入处 |
+| $k<0$ | 最大输入处 | 最小输入处 |
+
+范围由预算、总量、比例、时间和整数要求等共同决定。端点必须能取到；件数的下界不是整数时，要取满足条件的第一个整数，不能四舍五入。范围没有某个端点时，也可能没有对应最值。
+
+收费规则、运动状态等发生改变时，应分段列式，不能用同一条直线套完整过程。
+
+### 【考点】求交点与面积 {#intersection-method .exam-title}
 
 公共点要同时满足两式，可以图解，也可以代数联立复核。求与横轴围成的三角形面积时，底长是两个横轴交点的距离，高是顶点纵坐标的绝对值。
 
@@ -754,8 +881,7 @@ $A\left(\frac23,\frac{13}{3}\right)$，$B\left(-\frac32,0\right)$，$C(5,0)$；�
 
 </article>
 
-
-### 9. 用图象解方程与不等式 {#graph-solutions .exam-title}
+### 【考点】用图象解方程与不等式 {#graph-solutions .exam-title}
 
 先把目标翻译为“某个高度”“横轴上方或下方”“两图谁高谁低”。再读横坐标，不把图上的纵坐标答成方程的根。距离要结合正负半轴还原坐标。
 
@@ -935,8 +1061,7 @@ A 对应 $x>-2$，C 对应 $x<-2$，D 对应 $x>2$。只看截点而不看哪侧
 
 </article>
 
-
-### 10. 比较费用方案 {#costs .exam-title}
+### 【考点】比较费用方案 {#costs .exam-title}
 
 先分别求出两个表达式，再求相等的临界输入，最后分区比较。固定费用和每单位费用各有作用，不能单凭其中一项低就断定始终合算。
 
@@ -1039,8 +1164,7 @@ $x=300$ 时，分别剩 $32,20\,\mathrm{kW\cdot h}$，差为 $12\,\mathrm{kW\cdo
 
 </article>
 
-
-### 11. 求最大利润 {#optimization .exam-title}
+### 【考点】求最大利润 {#optimization .exam-title}
 
 总量固定时，用 $x$ 与“总量减 $x$”表示两类数量。先列预算、比例与利润门槛，求共同整数范围，再看目标式的增减性。最大利润要同时报告对应的实际数量，并回验限制。
 
@@ -1098,56 +1222,10 @@ $$y=(40-35)x+(50-42)(90-x)=720-3x.$$
 
 </article>
 
-
-## 【坑点】错因与边界 {#pitfalls .handbook-section .is-pitfall}
-
-
-### 1. 指数为一，还要检查系数非零 {#definition-pit .pitfall-title}
+## 【坑点】边界与易错辨析 {#pitfalls .handbook-section .is-pitfall}
 
 
-含参式写着一次幂，不等于实际存在一次项。指数、系数、常数项分开检查：正比例函数还要求实际常数项为零，一次函数则允许常数项非零。
-
-<article class="handbook-example is-pitfall" aria-labelledby="pitfall-1">
-
-#### <span class="example-number">辨析 01</span> <span class="example-name">含参定义的三个位置</span> <span class="example-source">知识清单例题</span> {#pitfall-1 .example-heading}
-
-<div class="example-question">
-
-<p class="example-label">题目</p>
-
-（1）$y=(k-2)x^{k^2-3}+b+1$ 是正比例函数，求 $k,b$。
-
-（2）$y=(m-2)x^{m^2-3}+1$ 是一次函数，求 $m$。
-
-</div>
-
-<details class="example-disclosure">
-<summary>答案与解析</summary>
-
-<div class="example-solution">
-
-<p class="example-label">解析</p>
-
-（1）同时要求 $k^2-3=1$、$k-2\ne0$、$b+1=0$。指数条件给 $k=\pm2$，非零系数条件排除 $2$，所以 $k=-2,b=-1$，整体变为 $y=-4x$。
-
-（2）指数条件给 $m=\pm2$，但 $m=2$ 时一次项消失，只剩常函数 $y=1$，不合题意。故 $m=-2$，得到 $y=-4x+1$。常数项 $1$ 不妨碍一次函数的定义。
-
-<div class="example-answer">
-
-<p class="example-answer-label">本题结论</p>
-
-（1）$k=-2,b=-1$。（2）$m=-2$。
-
-</div>
-
-</div>
-
-</details>
-
-</article>
-
-
-### 2. 不经过某象限，别漏零截距 {#quadrant-pit .pitfall-title}
+### 【坑点】不经过某象限，别漏零截距 {#quadrant-pit .pitfall-title}
 
 
 “不经过”要求该象限里没有图象上的点，并不要求截距一定严格为正或严格为负。零截距要单独检查，不能只套非零截距的三象限表。
@@ -1191,8 +1269,7 @@ $m\le0$，包含 $m=0$。
 
 </article>
 
-
-### 3. 点的平移量不能直接塞进函数式 {#translation-pit .pitfall-title}
+### 【坑点】点的平移量不能直接塞进函数式 {#translation-pit .pitfall-title}
 
 
 错法： 把右移 $a$ 写成在函数式中直接用 $x+a$。
@@ -1240,8 +1317,7 @@ $m\le0$，包含 $m=0$。
 
 </article>
 
-
-### 4. 同斜率不代表重合 {#parallel-pit .pitfall-title}
+### 【坑点】同斜率不代表重合 {#parallel-pit .pitfall-title}
 
 
 斜率相同，只能说明倾斜方向一致。还要比较截距：不同则平行，相同才是同一直线。与方程组的解数一起核验，可以避免把无解和无穷多解混淆。
@@ -1311,8 +1387,7 @@ D. 无法确定
 
 </article>
 
-
-### 5. 整数输入不能四舍五入成精确解 {#integer-pit .pitfall-title}
+### 【坑点】整数输入不能四舍五入成精确解 {#integer-pit .pitfall-title}
 
 
 排号、件数只能取整数时，精确方程得到非整数，可能说明没有这种方案，不能把它四舍五入。与不等式中的“取首个合法整数”是两回事。
@@ -1360,8 +1435,7 @@ D. 无法确定
 
 </article>
 
-
-### 6. 利润最优之前，先查约束 {#optimization-pit .pitfall-title}
+### 【坑点】利润最优之前，先查约束 {#optimization-pit .pitfall-title}
 
 
 目标式递减，不意味着能直接把输入取0。预算和利润门槛可能排除小输入；最优只能在所有限制同时满足的范围里比较。
@@ -1416,8 +1490,7 @@ $$y=400x+500(20-x)=10000-100x.$$
 
 </article>
 
-
-### 7. 分段面积的终点是否允许 {#endpoint-pit .pitfall-title}
+### 【坑点】分段面积的终点是否允许 {#endpoint-pit .pitfall-title}
 
 
 动点运动路线的总长度与允许终点要分别核对。某段表达式算得面积0，并不意味着题目允许动点到达那个位置；空心点应由题设决定。
@@ -1510,8 +1583,7 @@ $$y=400x+500(20-x)=10000-100x.$$
 
 </article>
 
-
-### 8. 相对距离的变化不等于实际路程 {#relative-distance .pitfall-title}
+### 【坑点】相对距离的变化不等于实际路程 {#relative-distance .pitfall-title}
 
 
 两车间距离是位置差的绝对值。相遇时距离为0，相遇后前后位置互换，距离图可以由降变升，并不代表车辆掉头。一车休息时，另一车若先接近再远离，要把两段实际路程相加。
@@ -1590,4 +1662,3 @@ $$2+\frac{40}{60}=\frac83\text{ 小时}.$$
 </details>
 
 </article>
-

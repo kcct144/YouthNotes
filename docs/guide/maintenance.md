@@ -10,7 +10,7 @@ title: 维护指南
 - `docs/.vuepress/plume.config.ts`：显示设置；`collections.ts`：学科与侧边栏；`navbar.ts`：导航。
 - `docs/.vuepress/math-junior-sidebar.ts`：初中数学的六大专题目录与阅读顺序。
 - `docs/.vuepress/theme/styles/custom.css`：主题色和三类笔记配色。
-- `docs/.vuepress/plugins/note-headings.ts`：识别二级标题开头的三类 `【…】` 标记并添加配色类，正文与目录保留原有文字。
+- `docs/.vuepress/plugins/note-headings.ts`：识别 h2–h6 开头的三类 `【…】` 标记，分类与标题等级无关；正文原文和锚点不改。
 - `docs/.vuepress/note-outline.ts`：将正文标题的分类同步到“此页内容”目录，兼容页面切换和按需展开的下拉菜单。
 - `docs/.vuepress/theme/components/NoteContributors.vue`、`NoteChangelog.vue`：贡献者名单与修改记录组件。
 - `docs/.vuepress/theme/layouts/NoteLayout.vue`：通过 Plume 的正文后插槽自动展示共建记录；`shared/note-records.ts` 统一定义数据及校验规则。
@@ -18,7 +18,9 @@ title: 维护指南
 
 每个学科的初中、高中是独立的 Plume 文档集合，各自拥有标题、侧边栏和前后篇导航；跨学段内容也独立收录。顶部“初中笔记”“高中笔记”分别进入对应学段。
 
-新增学科时在 `collections.ts` 的 `subjects` 加一项，创建学科首页及 `junior/README.md`、`senior/README.md` 两个学段入口，并更新学科目录页。笔记放入对应的 `junior/`、`senior/` 或跨学段的 `shared/`，由各自集合的侧边栏自动收录。初中数学沿用迁入笔记的专题结构，新增或移动页面时需同步维护 `math-junior-sidebar.ts` 与阅读导览。默认不自动写入 frontmatter，网站地址来自目录与文件名。
+`shared/subject-catalog.ts` 区分完整内容科目 `subjects` 与公开入口 `publicSubjectDirs`/`publicSubjects`。完整集合保留原有科目与旧网址；当前首页、顶部学段菜单和学科目录只展示数学、物理、化学、英语，按此顺序直达学段学科页。收拢入口时不要过滤 `collections.ts` 的完整集合，也不要删除存量页面。首页使用静态 Markdown/HTML 链接及 `theme/styles/home.css`，没有新交互组件；`scripts/home-entry.test.mjs` 检查首页与目录链接和公开配置一致。
+
+新增科目集合时在 `shared/subject-catalog.ts` 的 `subjects` 加一项，创建学科首页及 `junior/README.md`、`senior/README.md` 两个学段入口；是否加入公开入口另按明确需求决定，同步首页与学科目录并通过入口测试。笔记放入对应的 `junior/`、`senior/` 或跨学段的 `shared/`，由各自集合的侧边栏自动收录。初中数学沿用迁入笔记的专题结构，新增或移动页面时需同步维护 `math-junior-sidebar.ts` 与阅读导览。默认不自动写入 frontmatter，网站地址来自目录与文件名。
 
 ## 贡献者名单与修改记录
 
@@ -110,6 +112,14 @@ ssh -o StrictHostKeyChecking=yes -p 22 youthnotes-deploy@120.25.178.64 'python3 
 ## 仍需确定的事项
 
 内容许可和审阅分工仍需师生确认。现有 `package.json` 继承了模板的 MIT 字段，不代表教材、试题或笔记已经获得同样的授权。
+
+## 标题类型与专项练习实现
+
+标题统一语法和练习接口以[笔记写法](./writing.md)为准，不按类别重新排序。`shared/note-types.ts` 负责类型识别；图标为 CSS 装饰，分类文字保留，避免改变自动锚点。当前安装的 Plume rc.214 在 `getHeaders` 中读取 h1–h6，`outline: 'deep'` 可到 h6，递归 `VPDocOutlineItem` 无固定嵌套层数；本站默认 `outline: [2, 3]`，页面可按需覆盖，不强制所有细节进入目录。
+
+`NotePractice.vue` 是本项目新增的 Vue 原生组件，`shared/note-practice.ts` 校验配置与单选判断，`note-practice.css` 负责深浅色和窄屏。题干与选项、提示、解析由同一份 Markdown 插槽经现有 KaTeX 链路生成，不再存另一份字符串题干。无需额外依赖或账号，不上传/持久保存草稿和成绩；客户端答案不保密。测试由 `scripts/note-learning.test.mjs` 随 `docs:check` 执行，覆盖 h2–h6、不改原文/锚点、练习配置、判断与实际 Vue 组件服务端渲染，浏览器交互仍需另验。
+
+本轮只读核对 YouthNote 的根 `.vuepress/client.ts`、`theme/styles/subject-handbook.css`、`custom.css` 以及 `Question/MultipleChoiceS.vue`、`QuestionContainer.vue`。沿用已有 MIT 通知并参考例题卡片、折叠解析、选项自适应和键盘焦点样式，做本站蓝/紫/橙最小适配；未引入首页样式。旧题目组件使用 `el-card`/`el-button`，其 package.json 未声明对应 UI 依赖，且 QuestionContainer 存在缺失组件引用，故不直接移植，不建立跨仓库运行依赖。参考项目根 LICENSE 与本项目 `LICENSES/YouthNote-MIT.txt` 均为同一 MIT 通知；这不扩大到题目或图片的内容授权。
 
 ## 参考项目
 

@@ -12,7 +12,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
     "docs:preview": "http-server docs/.vuepress/dist",
-    "docs:check": "node --test scripts/note-records.test.mjs && node scripts/check-content.mjs && vue-tsc --noEmit",
+    "docs:check": "node --test scripts/*.test.mjs && node scripts/check-content.mjs && vue-tsc --noEmit",
     "vp-update": "pnpm dlx vp-update"
   },
   "devDependencies": {

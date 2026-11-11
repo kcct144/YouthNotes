@@ -1,23 +1,9 @@
 import { defineCollection, defineCollections } from 'vuepress-theme-plume'
 import { mathJuniorSidebar } from './math-junior-sidebar'
+import { stages, subjects } from './shared/subject-catalog'
 
-// 每个学科、每个学段独立维护目录、面包屑和前后篇导航。
-export const subjects = [
-  { dir: 'chinese', title: '语文' },
-  { dir: 'math', title: '数学' },
-  { dir: 'english', title: '英语' },
-  { dir: 'physics', title: '物理' },
-  { dir: 'chemistry', title: '化学' },
-  { dir: 'biology', title: '生物' },
-  { dir: 'geography', title: '地理' },
-  { dir: 'history', title: '历史' },
-  { dir: 'politics', title: '道德与法治 / 思想政治' },
-]
-
-export const stages = [
-  { dir: 'junior', title: '初中' },
-  { dir: 'senior', title: '高中' },
-] as const
+// Do not filter content collections when reducing public navigation.
+export { stages, subjects, publicSubjects } from './shared/subject-catalog'
 
 export function subjectStageTitle(dir: string, title: string, stage: 'junior' | 'senior') {
   if (dir === 'politics') return stage === 'junior' ? '初中道德与法治' : '高中思想政治'
