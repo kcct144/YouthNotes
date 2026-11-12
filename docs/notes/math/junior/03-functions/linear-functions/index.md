@@ -18,7 +18,7 @@ noteChanges: []
   <a class="handbook-jump" href="#determination"><span class="handbook-nav-title">03 · 两点求式</span><span>列方程、求系数、代回检验</span></a>
 </nav>
 
-**学习方式**：先读概念与图象，再独立尝试例题和专项练习；需要时展开提示与解析，检查自己的思路。
+**学习方式**：先读概念与图象，再看例题；例题的解析默认收起，需要时展开对照。
 
 **选读提示**：平移、交点、实际应用等专题在后文，可用页内目录按需查阅。
 
@@ -76,52 +76,6 @@ $b=0$ 时，得到 $y=kx$，叫作==正比例函数==，图象经过原点
 </details>
 
 </article>
-
-#### 【考点】定义判定专项练习（原创）
-
-<NotePractice mode="single" answer="B" choices="A,B,C,D" title="专项练习 1（原创）">
-
-已知 $y=(m-1)x^{m^2}+2$ 是一次函数，$m$ 应取哪个值？按“指数为 $1$、一次项系数非零”同时检查。
-
-<template #option-a>
-
-$m=0$
-
-</template>
-
-<template #option-b>
-
-$m=-1$
-
-</template>
-
-<template #option-c>
-
-$m=1$
-
-</template>
-
-<template #option-d>
-
-$m=2$
-
-</template>
-
-<template #hint>
-
-先由 $m^2=1$ 得到候选值，再检查 $m-1$ 是否为零。常数项 $2$ 不影响一次函数的判定。
-
-</template>
-
-<template #answer>
-
-选 B。由 $m^2=1$ 得 $m=\pm1$；由 $m-1\ne0$ 排除 $m=1$，故 $m=-1$。
-
-检验：代入得到 $y=-2x+2$，指数为 $1$、系数 $-2\ne0$。A 不含一次项，C 的一次项系数为 $0$，D 给 $y=x^4+2$，均不是一次函数。
-
-</template>
-
-</NotePractice>
 
 ## 【知识点】把 k、b 与图象对应起来 {#graph-path}
 
@@ -650,30 +604,6 @@ $$y+5=k(3x+4),\qquad k\ne0.$$
 </details>
 
 </article>
-
-### 【考点】从两点到图象的综合自查（原创）
-
-<NotePractice mode="self" title="专项练习 2（原创）">
-
-已知一次函数经过 $A(-1,5)$、$B(2,-1)$。求解析式、与 $y$ 轴的交点和 $x=4$ 时的函数值，并判断增减性；最后回代两个已知点检验。
-
-<template #hint>
-
-两点横坐标不同，可先求 $k=\dfrac{-1-5}{2-(-1)}$，再求 $b$。不要把截距的正负当作增减性的依据。
-
-</template>
-
-<template #answer>
-
-设 $y=kx+b$，由两点得 $-k+b=5$、$2k+b=-1$。相减得 $3k=-6$，故 $k=-2$，再得 $b=3$。
-
-所以 $y=-2x+3$；与 $y$ 轴交于 $(0,3)$；$x=4$ 时 $y=-5$。因 $k=-2<0$，$y$ 随 $x$ 增大而减小，不能因 $b=3>0$ 就判断递增。
-
-检验：$-2\times(-1)+3=5$、$-2\times2+3=-1$，且 $k\ne0$。自查时逐项核对表达式、轴上交点、函数值、增减性和两个点的回代，不只核对最终式子。
-
-</template>
-
-</NotePractice>
 
 ## 继续探索：图象的平移与实际应用 {#further-topics}
 
