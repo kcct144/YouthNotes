@@ -10,15 +10,13 @@ config:
 <header class="home-intro-copy">
 <p class="home-eyebrow">YOUTHNOTES <span>师生共建的学科手册</span></p>
 <h1>一起把知识<br><em>讲明白。</em></h1>
-<p class="home-description">老师与学生一起写的初高中学科笔记。<span class="home-description-detail"><br>把概念说清，把方法写透，把易错处想明白。</span></p>
-<p class="home-edition">从一个问题出发，连接更多理解。</p>
+<HomeSlogan />
 </header>
 </div>
 
 <section class="home-directory" aria-labelledby="home-directory-title">
 <div class="home-section-heading">
 <h2 id="home-directory-title">学科目录</h2>
-<p>找到正在学的，翻到想弄懂的。</p>
 </div>
 <div class="home-stages">
 <section class="home-stage" aria-labelledby="home-junior-title">
@@ -45,7 +43,6 @@ config:
 <HomeRandomNote />
 
 <div class="home-secondary">
-<div><p class="home-section-label">共同写下，共同读懂</p><p class="home-shared-line">好的笔记，经得起追问。</p></div>
 <div>
 
 [学习方法](./methods/README.md)
