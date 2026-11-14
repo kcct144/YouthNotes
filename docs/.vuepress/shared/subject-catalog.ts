@@ -12,7 +12,22 @@ export const subjects = [
 ] as const
 
 // Public entry points are a separate, deliberately ordered subset.
-export const publicSubjectDirs = ['math', 'physics', 'chemistry', 'english'] as const
+// 两个学段各有自己的公开入口：初中加历史，高中加生物，互不连带。
+export const publicStageSubjectDirs = {
+  junior: ['math', 'physics', 'chemistry', 'english', 'history'],
+  senior: ['math', 'physics', 'chemistry', 'english', 'biology'],
+} as const
+
+export type PublicStage = keyof typeof publicStageSubjectDirs
+
+export function publicSubjectsFor(stage: PublicStage) {
+  return publicStageSubjectDirs[stage].map(dir => subjects.find(subject => subject.dir === dir)!)
+}
+
+// 需要跨学段处理的场合（如首页随机池）使用两学段的并集。
+export const publicSubjectDirs = [
+  ...new Set([...publicStageSubjectDirs.junior, ...publicStageSubjectDirs.senior]),
+]
 export const publicSubjects = publicSubjectDirs.map(dir => subjects.find(subject => subject.dir === dir)!)
 
 export const stages = [

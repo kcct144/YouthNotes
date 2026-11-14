@@ -12,13 +12,14 @@ function article(overrides = {}) {
   }
 }
 
-test('随机池仅收录公开四科的真实文章，排除目录、草稿与空占位页', () => {
+test('随机池仅收录公开入口科目的真实文章，排除目录、草稿与空占位页', () => {
   const note = createRandomNote(article())
   assert.equal(note.title, '主题名称')
   assert.equal(note.subject, '数学')
   assert.equal(note.stage, '初中')
   assert.equal(note.path, '/notes/math/junior/topic/')
-  for (const filePathRelative of ['notes/math/junior/README.md', 'notes/biology/junior/topic.md', 'guide/writing.md', null])
+  // 语文、地理仍不在公开入口内，语文没有公开学段。
+  for (const filePathRelative of ['notes/math/junior/README.md', 'notes/chinese/junior/topic.md', 'notes/geography/senior/topic.md', 'guide/writing.md', null])
     assert.equal(createRandomNote(article({ filePathRelative })), undefined)
   assert.equal(createRandomNote(article({ frontmatter: { draft: true } })), undefined)
   assert.equal(createRandomNote(article({ contentRendered: '<p>待共建。请补充此处的学科内容。</p>' })), undefined)
@@ -26,6 +27,9 @@ test('随机池仅收录公开四科的真实文章，排除目录、草稿与�
   assert.equal(createRandomNote(article({ contentRendered: '' })), undefined)
   assert.equal(createRandomNote(article({ filePathRelative: 'notes/physics/senior/topic.md' })).stage, '高中')
   assert.equal(createRandomNote(article({ filePathRelative: 'notes/english/shared/topic.md' })).stage, '跨学段')
+  // 学段专属入口同样进池：初中历史、高中生物。
+  assert.equal(createRandomNote(article({ filePathRelative: 'notes/history/junior/topic.md' })).subject, '历史')
+  assert.equal(createRandomNote(article({ filePathRelative: 'notes/biology/senior/topic.md' })).subject, '生物')
 })
 
 test('简介与配图取同一文章，忽略导航和折叠答案，并处理实体与中文截断', () => {

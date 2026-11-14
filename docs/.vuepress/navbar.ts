@@ -1,11 +1,11 @@
 import { defineNavbarConfig } from 'vuepress-theme-plume'
-import { stages, publicSubjects } from './shared/subject-catalog'
+import { stages, publicSubjectsFor } from './shared/subject-catalog'
 
 export default defineNavbarConfig([
   { text: '首页', link: '/' },
   ...stages.map(({ dir: stage, title: stageTitle }) => ({
     text: `${stageTitle}笔记`,
-    items: publicSubjects.map(({ dir, title }) => ({
+    items: publicSubjectsFor(stage).map(({ dir, title }) => ({
       text: title,
       link: `/notes/${dir}/${stage}/`,
     })),

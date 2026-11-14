@@ -26,6 +26,7 @@ config:
   <a href="/notes/physics/junior/" aria-label="初中物理"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">⚙️</span>物理</span><small lang="en">Physics</small></span></a>
   <a href="/notes/chemistry/junior/" aria-label="初中化学"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">🧪</span>化学</span><small lang="en">Chemistry</small></span></a>
   <a href="/notes/english/junior/" aria-label="初中英语"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">🔤</span>英语</span><small lang="en">English</small></span></a>
+  <a href="/notes/history/junior/" aria-label="初中历史"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">📜</span>历史</span><small lang="en">History</small></span></a>
 </nav>
 </section>
 <section class="home-stage" aria-labelledby="home-senior-title">
@@ -35,6 +36,7 @@ config:
   <a href="/notes/physics/senior/" aria-label="高中物理"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">⚙️</span>物理</span><small lang="en">Physics</small></span></a>
   <a href="/notes/chemistry/senior/" aria-label="高中化学"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">🧪</span>化学</span><small lang="en">Chemistry</small></span></a>
   <a href="/notes/english/senior/" aria-label="高中英语"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">🔤</span>英语</span><small lang="en">English</small></span></a>
+  <a href="/notes/biology/senior/" aria-label="高中生物"><span><span class="home-subject-name"><span class="home-subject-emoji" aria-hidden="true">🧬</span>生物</span><small lang="en">Biology</small></span></a>
 </nav>
 </section>
 </div>

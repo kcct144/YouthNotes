@@ -18,7 +18,7 @@ title: 维护指南
 
 每个学科的初中、高中是独立的 Plume 文档集合，各自拥有标题、侧边栏和前后篇导航；跨学段内容也独立收录。顶部“初中笔记”“高中笔记”分别进入对应学段。
 
-`shared/subject-catalog.ts` 区分完整内容科目 `subjects` 与公开入口 `publicSubjectDirs`/`publicSubjects`。完整集合保留原有科目与旧网址；当前首页、顶部学段菜单和学科目录只展示数学、物理、化学、英语，按此顺序直达学段学科页。收拢入口时不要过滤 `collections.ts` 的完整集合，也不要删除存量页面。首页使用静态 Markdown/HTML 链接及 `theme/styles/home.css`，没有新交互组件；`scripts/home-entry.test.mjs` 检查首页与目录链接和公开配置一致。
+`shared/subject-catalog.ts` 区分完整内容科目 `subjects` 与公开入口 `publicStageSubjectDirs`（按学段）/`publicSubjects`（两学段并集）。完整集合保留原有科目与旧网址；当前首页、顶部学段菜单和学科目录按学段展示：初中为数学、物理、化学、英语、历史，高中为数学、物理、化学、英语、生物，按此顺序直达学段学科页。收拢或调整入口时不要过滤 `collections.ts` 的完整集合，也不要删除存量页面。首页学科入口使用静态 Markdown/HTML 链接及 `theme/styles/home.css`；`client.ts` 注册的 `theme/components/HomeRandomNote.vue` 提供随机笔记与“换一篇”，`HomeSlogan.vue` 在挂载后随机展示标语，标语数据与选择逻辑位于 `shared/home-slogans.ts`。这两个组件先使用确定的初始内容，挂载后再随机，避免服务端渲染与水合不一致；浏览器交互效果仍需单独验收。`scripts/home-entry.test.mjs` 检查首页与目录链接和公开配置一致。
 
 新增科目集合时在 `shared/subject-catalog.ts` 的 `subjects` 加一项，创建学科首页及 `junior/README.md`、`senior/README.md` 两个学段入口；是否加入公开入口另按明确需求决定，同步首页与学科目录并通过入口测试。笔记放入对应的 `junior/`、`senior/` 或跨学段的 `shared/`，由各自集合的侧边栏自动收录。初中数学沿用迁入笔记的专题结构，新增或移动页面时需同步维护 `math-junior-sidebar.ts` 与阅读导览。默认不自动写入 frontmatter，网站地址来自目录与文件名。
 

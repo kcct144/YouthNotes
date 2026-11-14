@@ -43,7 +43,7 @@
 .subject-home .home-stage-number { align-self: start; padding-top: 3px; color: var(--vp-c-text-2); font-family: var(--vp-font-family-mono); font-size: 10px; }
 .subject-home .home-stage h3 { margin: 0; color: var(--vp-c-text-2); font-size: 16px; font-weight: 550; line-height: 1.4; }
 .subject-home .home-stage-heading p { margin: 2px 0 0; color: var(--vp-c-text-2); font-size: 10px; letter-spacing: .09em; }
-.subject-home .home-subjects { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.subject-home .home-subjects { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 20px 18px; }
 .subject-home .home-subjects a { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-width: 0; margin-block: 12px; padding: 10px 4px; border-bottom: 1px solid var(--vp-c-divider); color: var(--vp-c-text-1); text-decoration: none; transition: color .15s, border-color .15s, background .15s; }
 .subject-home .home-subjects a > span:first-child { display: flex; flex-direction: column; gap: 3px; font-size: 19px; font-weight: 600; line-height: 1.4; }
 .subject-home .home-subject-name { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
@@ -58,7 +58,9 @@
 @media (max-width: 959px) {
   .subject-home .vp-home-custom .vp-doc { column-gap: 36px; }
   .subject-home .home-stage { grid-template-columns: 124px minmax(0, 1fr); }
-  .subject-home .home-subjects { gap: 16px; }
+  .subject-home .home-subjects { gap: 12px; }
+  .subject-home .home-subjects a > span:first-child { font-size: 17px; }
+  .subject-home .home-subjects small { padding-inline-start: 21px; font-size: 9px; }
 }
 @media (max-width: 699px) {
   .subject-home .vp-home-custom { padding: 0 24px 32px; }
@@ -89,6 +91,8 @@
   .subject-home .home-stage-heading p { margin: 0; font-size: 9px; }
   .subject-home .home-subjects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; padding: 0; }
   .subject-home .home-subjects a { min-height: 54px; margin: 0; padding: 9px 4px; }
+  /* 学段科目为奇数时，末项独占一行，避免最后只剩一半空位。 */
+  .subject-home .home-subjects a:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .subject-home .home-subjects a > span:first-child { font-size: 17px; gap: 1px; }
   .subject-home .home-subject-name { gap: 6px; }
   .subject-home .home-subject-emoji { font-size: 15px; }
