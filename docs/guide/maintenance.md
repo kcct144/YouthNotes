@@ -9,8 +9,8 @@ title: 维护指南
 - `docs/.vuepress/config.ts`：构建、搜索、公式和图表能力，以及共建记录校验。
 - `docs/.vuepress/plume.config.ts`：显示设置；`collections.ts`：学科与侧边栏；`navbar.ts`：导航。
 - `docs/.vuepress/math-junior-sidebar.ts`：初中数学的六大专题目录与阅读顺序。
-- `docs/.vuepress/theme/styles/custom.css`：主题色和三类笔记配色。
-- `docs/.vuepress/plugins/note-headings.ts`：识别 h2–h6 开头的三类 `【…】` 标记，分类与标题等级无关；正文原文和锚点不改。
+- `docs/.vuepress/theme/styles/custom.css`：主题色和四类笔记配色（知识点蓝、考点紫、坑点赭橙、清单青绿）。
+- `docs/.vuepress/plugins/note-headings.ts`：识别 h2–h6 开头的四类 `【…】` 标记（知识点、考点、坑点、清单），分类与标题等级无关；正文原文和锚点不改。
 - `docs/.vuepress/note-outline.ts`：将正文标题的分类同步到“此页内容”目录，兼容页面切换和按需展开的下拉菜单。
 - `docs/.vuepress/theme/components/NoteContributors.vue`、`NoteChangelog.vue`：贡献者名单与修改记录组件。
 - `docs/.vuepress/theme/layouts/NoteLayout.vue`：通过 Plume 的正文后插槽自动展示共建记录；`shared/note-records.ts` 统一定义数据及校验规则。
