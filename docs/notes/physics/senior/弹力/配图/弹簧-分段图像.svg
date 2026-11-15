@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="410" viewBox="0 0 640 410" role="img" aria-labelledby="title desc">
+  <title id="title">套放弹簧的压力与压缩量图像</title>
+  <desc id="desc">横轴为大弹簧压缩量x，单位米；纵轴为压力F，单位牛。折线从原点到(0.2,2)，再到(0.3,5)。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L7 3.5 0 7Z" fill="#59677b"/></marker>
+  </defs>
+  <rect width="640" height="410" rx="16" fill="#fbfcff"/>
+  <g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#26354b">
+    <g fill="none" stroke="#aab4c5" stroke-width="1.4" stroke-dasharray="5 5">
+      <path d="M100 240H360V340 M100 90H490V340"/>
+    </g>
+    <g fill="none" stroke="#59677b" stroke-width="1.8" marker-end="url(#arrow)">
+      <path d="M100 340H558"/>
+      <path d="M100 340V52"/>
+    </g>
+    <g fill="none" stroke="#59677b" stroke-width="1.5">
+      <path d="M100 290h-6 M100 240h-6 M100 190h-6 M100 140h-6 M100 90h-6 M230 340v6 M360 340v6 M490 340v6"/>
+    </g>
+    <g font-size="20" text-anchor="end">
+      <text x="83" y="365">0</text>
+      <text x="83" y="297">1</text>
+      <text x="83" y="247">2</text>
+      <text x="83" y="197">3</text>
+      <text x="83" y="147">4</text>
+      <text x="83" y="97">5</text>
+    </g>
+    <g font-size="20" text-anchor="middle">
+      <text x="230" y="369">0.1</text>
+      <text x="360" y="369">0.2</text>
+      <text x="490" y="369">0.3</text>
+    </g>
+    <text x="111" y="42" font-size="22">F / N</text>
+    <text x="566" y="347" font-size="22">x / m</text>
+    <path d="M100 340L360 240L490 90" fill="none" stroke="#245dc1" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="360" cy="240" r="4.7" fill="#245dc1"/>
+    <circle cx="490" cy="90" r="4.7" fill="#245dc1"/>
+  </g>
+</svg>
