@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+<title id="title">指数式与对数式的对应关系</title>
+<desc id="desc">a的x次方等于N，等价于以a为底N的对数是x。a是底数，N是幂值也是对数式的真数，x是指数也是对数。</desc>
+<rect width="720" height="220" rx="12" fill="#fbfcff"/>
+<g font-family="Microsoft YaHei, sans-serif" fill="#26354b">
+<rect x="24" y="16" width="292" height="188" rx="8" fill="#f0f5ff"/>
+<rect x="404" y="16" width="292" height="188" rx="8" fill="#f0f5ff"/>
+<text x="50" y="47" font-size="21">指数式</text>
+<text x="430" y="47" font-size="21">对数式</text>
+<g font-family="Cambria, Times New Roman, serif" font-size="44">
+<text x="108" y="108" fill="#b64b0b" font-style="italic">a</text>
+<text x="132" y="82" font-size="29" fill="#245dc1" font-style="italic">x</text>
+<text x="174" y="108">=</text>
+<text x="222" y="108" fill="#08756b" font-style="italic">N</text>
+<text x="437" y="108">log</text>
+<text x="494" y="119" font-size="27" fill="#b64b0b" font-style="italic">a</text>
+<text x="520" y="108" fill="#08756b" font-style="italic">N</text>
+<text x="565" y="108">=</text>
+<text x="613" y="108" fill="#245dc1" font-style="italic">x</text>
+</g>
+<text x="360" y="107" text-anchor="middle" font-size="43" fill="#59677b">⇄</text>
+<g font-size="20">
+<text x="50" y="151" fill="#b64b0b">a：底数</text>
+<text x="187" y="151" fill="#08756b">N：幂值</text>
+<text x="50" y="183" fill="#245dc1">x：指数</text>
+<text x="430" y="151" fill="#b64b0b">a：底数</text>
+<text x="567" y="151" fill="#08756b">N：真数</text>
+<text x="430" y="183" fill="#245dc1">x：对数</text>
+</g></g></svg>
