@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300" role="img" aria-labelledby="title desc">
+  <title id="title">两个分力的夹角为 120 度</title>
+  <desc id="desc">分力 F1 为 3 牛，分力 F2 为 4 牛。两分力夹角为 120 度，合力沿从 O 出发的对角线，约为 3.61 牛。</desc>
+  <defs>
+    <marker id="first-arrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L12 6L0 12Z" fill="#245dc1"/>
+    </marker>
+    <marker id="second-arrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L12 6L0 12Z" fill="#a64d1b"/>
+    </marker>
+    <marker id="result-arrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L12 6L0 12Z" fill="#18746a"/>
+    </marker>
+  </defs>
+  <rect width="420" height="300" rx="16" fill="#fbfcff"/>
+  <path d="M81 46.795H231L331 220" fill="none" stroke="#657386" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M233 220A52 52 0 0 0 155 174.967" fill="none" stroke="#657386" stroke-width="1.5"/>
+  <g fill="none" stroke-width="4">
+    <path d="M181 220H331" stroke="#245dc1" marker-end="url(#first-arrow)"/>
+    <path d="M181 220L81 46.795" stroke="#a64d1b" marker-end="url(#second-arrow)"/>
+    <path d="M181 220L231 46.795" stroke="#18746a" marker-end="url(#result-arrow)"/>
+  </g>
+  <circle cx="181" cy="220" r="4" fill="#26354b"/>
+  <g fill="#26354b" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18">
+    <text x="163" y="241">O</text>
+    <text x="151" y="157">120°</text>
+    <text x="256" y="253" text-anchor="middle" font-size="17" fill="#245dc1">分力 F₁ = 3 N</text>
+    <text x="113" y="129" text-anchor="end" font-size="17" fill="#a64d1b">分力 F₂ = 4 N</text>
+    <text x="253" y="49" font-size="17" fill="#18746a">合力 F<tspan x="253" dy="23">≈ 3.61 N</tspan></text>
+  </g>
+</svg>

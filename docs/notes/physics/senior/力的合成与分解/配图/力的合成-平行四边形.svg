@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="278" viewBox="0 0 690 278" role="img" aria-labelledby="title desc">
+  <title id="title">平行四边形定则的三种图形</title>
+  <desc id="desc">三图都用 OA 和 OC 表示分力，用 OB 表示合力。左图两个分力为 3 牛和 5 牛，夹角为 60 度，合力为 7 牛。中图两个分力为 3 牛和 4 牛，夹角为 90 度，合力为 5 牛。右图两个分力都为 3 牛，夹角为 90 度，合力为 3 倍根号 2 牛。</desc>
+  <defs>
+    <marker id="first-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#245dc1"/>
+    </marker>
+    <marker id="second-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#a64d1b"/>
+    </marker>
+    <marker id="result-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#18746a"/>
+    </marker>
+  </defs>
+  <rect width="690" height="278" rx="16" fill="#fbfcff"/>
+  <path d="M230 20V258 M460 20V258" fill="none" stroke="#dce3ed" stroke-width="1.5"/>
+  <g fill="none" stroke="#657386" stroke-width="2" stroke-dasharray="5 5">
+    <path d="M106 94.077H178L118 198"/>
+    <path d="M324 102H396V198"/>
+    <path d="M554 126H626V198"/>
+  </g>
+  <path d="M77 198A31 31 0 0 0 61.5 171.153 M324 185H337V198 M554 185H567V198" fill="none" stroke="#657386" stroke-width="1.6"/>
+  <g fill="none" stroke-width="3.5">
+    <g stroke="#245dc1" marker-end="url(#first-arrow)">
+      <path d="M46 198H118"/>
+      <path d="M324 198H396"/>
+      <path d="M554 198H626"/>
+    </g>
+    <g stroke="#a64d1b" marker-end="url(#second-arrow)">
+      <path d="M46 198L106 94.077"/>
+      <path d="M324 198V102"/>
+      <path d="M554 198V126"/>
+    </g>
+    <g stroke="#18746a" marker-end="url(#result-arrow)">
+      <path d="M46 198L178 94.077"/>
+      <path d="M324 198L396 102"/>
+      <path d="M554 198L626 126"/>
+    </g>
+  </g>
+  <g fill="#26354b">
+    <circle cx="46" cy="198" r="3.5"/>
+    <circle cx="324" cy="198" r="3.5"/>
+    <circle cx="554" cy="198" r="3.5"/>
+  </g>
+  <g fill="#26354b" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+    <g font-size="24" font-weight="600" text-anchor="middle">
+      <text x="115" y="34">平行四边形</text>
+      <text x="345" y="34">长方形</text>
+      <text x="575" y="34">正方形</text>
+    </g>
+    <g font-size="18">
+      <text x="28" y="219">O</text>
+      <text x="125" y="218">A</text>
+      <text x="186" y="105">B</text>
+      <text x="96" y="86">C</text>
+      <text x="83" y="185">60°</text>
+      <text x="306" y="219">O</text>
+      <text x="403" y="218">A</text>
+      <text x="404" y="113">B</text>
+      <text x="304" y="106">C</text>
+      <text x="536" y="219">O</text>
+      <text x="633" y="218">A</text>
+      <text x="634" y="137">B</text>
+      <text x="534" y="130">C</text>
+    </g>
+    <g font-size="22" text-anchor="middle">
+      <g fill="#245dc1">
+        <text x="82" y="230">分力 F₁<tspan x="82" dy="24">3 N</tspan></text>
+        <text x="360" y="230">分力 F₁<tspan x="360" dy="24">3 N</tspan></text>
+        <text x="590" y="230">分力 F₁<tspan x="590" dy="24">3 N</tspan></text>
+      </g>
+      <g fill="#a64d1b" text-anchor="end">
+        <text x="89" y="91">分力 F₂<tspan x="89" dy="24">5 N</tspan></text>
+        <text x="314" y="142">分力 F₂<tspan x="314" dy="24">4 N</tspan></text>
+        <text x="544" y="151">分力 F₂<tspan x="544" dy="24">3 N</tspan></text>
+      </g>
+      <g fill="#18746a">
+        <text x="174" y="62">合力 F<tspan x="174" dy="22">7 N</tspan></text>
+        <text x="393" y="67">合力 F<tspan x="393" dy="24">5 N</tspan></text>
+        <text x="623" y="90">合力 F<tspan x="623" dy="24">3√2 N</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

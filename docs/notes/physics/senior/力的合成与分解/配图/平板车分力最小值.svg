@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="360" viewBox="0 0 520 360" role="img" aria-labelledby="title description">
+  <title id="title">构造矩形求平板车的最小分力</title>
+  <desc id="description">OB 指向正南，表示 30 牛的合力。OA₀ 指向东偏南 60 度，和 OB 相差 30 度。以 OB 为对角线构造矩形，邻边 OC₀ 表示最小的分力 15 牛。</desc>
+  <defs>
+    <marker id="guide-arrow" markerWidth="7" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L7 4L0 8Z" fill="#657386"/>
+    </marker>
+    <marker id="result-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#18746a"/>
+    </marker>
+    <marker id="first-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#245dc1"/>
+    </marker>
+    <marker id="second-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#a64d1b"/>
+    </marker>
+  </defs>
+  <rect width="520" height="360" rx="16" fill="#fbfcff"/>
+  <g fill="none" stroke="#657386" stroke-width="1.6">
+    <path d="M246 70H448" marker-end="url(#guide-arrow)"/>
+    <path d="M246 310V335" marker-end="url(#guide-arrow)"/>
+    <path d="M142.077 130L246 310L349.923 250" stroke-dasharray="5 5"/>
+    <path d="M324 70A78 78 0 0 1 285 137.55"/>
+    <path d="M273.5 117.631A55 55 0 0 1 246 125"/>
+    <path d="M153.335 123.5L159.835 134.758L148.577 141.258"/>
+  </g>
+  <g fill="none" stroke-width="3.2">
+    <path d="M246 70V310" stroke="#18746a" marker-end="url(#result-arrow)"/>
+    <path d="M246 70L349.923 250" stroke="#245dc1" marker-end="url(#first-arrow)"/>
+    <path d="M246 70L142.077 130" stroke="#a64d1b" marker-end="url(#second-arrow)"/>
+  </g>
+  <circle cx="246" cy="70" r="3.4" fill="#26354b"/>
+  <g fill="#26354b" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20">
+    <text x="237" y="58">O</text>
+    <text x="226" y="322">B</text>
+    <text x="357" y="261">A₀</text>
+    <text x="112" y="144">C₀</text>
+    <text x="460" y="77">东</text>
+    <text x="259" y="343">南</text>
+    <text x="278" y="97">60°</text>
+    <text x="254" y="169">30°</text>
+    <text x="259" y="221" fill="#18746a">合力 F<tspan x="259" dy="24">30 N</tspan></text>
+    <text x="321" y="151" fill="#245dc1">分力 F₁<tspan x="321" dy="24">15√3 N</tspan></text>
+    <text x="147" y="71" fill="#a64d1b" text-anchor="middle">分力 F₂<tspan x="147" dy="24">最小为 15 N</tspan></text>
+  </g>
+</svg>

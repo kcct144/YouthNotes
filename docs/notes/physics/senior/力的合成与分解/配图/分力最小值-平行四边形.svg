@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="256" viewBox="0 0 420 256" role="img" aria-labelledby="title desc">
+  <title id="title">构造矩形求最小分力</title>
+  <desc id="desc">以合力 OB 为矩形的对角线，OA₀ 沿分力 F1 的方向。OC₀ 垂直于直线 ℓ，表示最小的分力 F2。夹角 θ 是 OB 和 OA₀ 的夹角。</desc>
+  <defs>
+    <marker id="first-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#245dc1"/>
+    </marker>
+    <marker id="second-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#a64d1b"/>
+    </marker>
+    <marker id="result-arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10Z" fill="#18746a"/>
+    </marker>
+  </defs>
+  <rect width="420" height="256" rx="16" fill="#fbfcff"/>
+  <path d="M46 67H357 M292 67V190" fill="none" stroke="#657386" stroke-width="1.8" stroke-dasharray="6 5"/>
+  <path d="M119 80H132V67 M164 190A45 45 0 0 0 155.675 163.925" fill="none" stroke="#657386" stroke-width="1.6"/>
+  <g fill="none" stroke-width="3.5">
+    <path d="M119 190H292" stroke="#245dc1" marker-end="url(#first-arrow)"/>
+    <path d="M119 190V67" stroke="#a64d1b" marker-end="url(#second-arrow)"/>
+    <path d="M119 190L292 67" stroke="#18746a" marker-end="url(#result-arrow)"/>
+  </g>
+  <circle cx="119" cy="190" r="3.5" fill="#26354b"/>
+  <g fill="#26354b" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20">
+    <text x="98" y="211">O</text>
+    <text x="302" y="208">A₀</text>
+    <text x="301" y="91">B</text>
+    <text x="95" y="56">C₀</text>
+    <text x="365" y="74">ℓ</text>
+    <text x="170" y="181">θ</text>
+    <text x="205" y="229" fill="#245dc1" text-anchor="middle">分力 F₁</text>
+    <text x="105" y="133" fill="#a64d1b" text-anchor="end">分力 F₂<tspan x="105" dy="24">最短</tspan></text>
+    <text x="297" y="52" fill="#18746a">合力 F</text>
+  </g>
+</svg>

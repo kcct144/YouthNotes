@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300" role="img" aria-labelledby="title desc">
+  <title id="title">用三角形画合力</title>
+  <desc id="desc">OA 向右，表示 3 牛。把表示 4 牛的箭头平移到 A，得到向上的 AB。合力仍从 O 指到 B，大小为 5 牛。</desc>
+  <defs>
+    <marker id="first-arrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L12 6L0 12Z" fill="#245dc1"/>
+    </marker>
+    <marker id="second-arrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L12 4L0 8Z" fill="#a64d1b"/>
+    </marker>
+    <marker id="result-arrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L12 4L0 8Z" fill="#18746a"/>
+    </marker>
+  </defs>
+  <rect width="420" height="300" rx="16" fill="#fbfcff"/>
+  <path d="M268 248V234H282" fill="none" stroke="#657386" stroke-width="1.5"/>
+  <g fill="none" stroke-width="4">
+    <path d="M132 248H282" stroke="#245dc1" marker-end="url(#first-arrow)"/>
+    <path d="M282 248V48" stroke="#a64d1b" marker-end="url(#second-arrow)"/>
+    <path d="M132 248L282 48" stroke="#18746a" marker-end="url(#result-arrow)"/>
+  </g>
+  <circle cx="132" cy="248" r="4" fill="#26354b"/>
+  <g fill="#26354b" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20">
+    <text x="112" y="269">O</text>
+    <text x="292" y="267">A</text>
+    <text x="292" y="51">B</text>
+    <text x="207" y="278" text-anchor="middle" font-size="17" fill="#245dc1">分力 F₁ = 3 N</text>
+    <text x="299" y="142" font-size="17" fill="#a64d1b">分力 F₂ = 4 N</text>
+    <text x="183" y="202" font-size="17" fill="#18746a">合力 F = 5 N</text>
+  </g>
+</svg>
