@@ -119,8 +119,10 @@ html.smooth { scroll-behavior: auto; }
 .vp-doc blockquote::before { display: none; }
 .vp-doc mark { --vp-mark-linear-color: var(--yn-mark); --vp-mark-animation: none; background-position: 0 var(--vp-mark-bg-shift); }
 .vp-doc a:not(.header-anchor,.vp-link) { text-underline-offset: 4px; }
-.vp-doc table { display: block; max-width: 100%; width: max-content; margin: 24px 0; border-collapse: collapse; overflow-x: auto; font-size: 14px; line-height: 1.8; }
-.vp-doc :is(th,td) { padding: 10px 15px; border: 1px solid var(--vp-c-divider); }
+/* Keep columns readable; overflow scrolls inside the table, not the page. */
+.vp-doc table { display: block; max-width: 100%; width: max-content; margin: 24px 0; border-collapse: collapse; overflow-x: auto; overscroll-behavior-x: contain; font-size: 14px; line-height: 1.8; }
+.vp-doc :is(th,td) { padding: 10px 15px; border: 1px solid var(--vp-c-divider); white-space: nowrap; }
+.vp-doc table:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 3px; }
 .vp-doc th { color: var(--vp-c-text-1); background: var(--vp-c-bg-soft); font-weight: 600; }
 .vp-doc tr { background: transparent; }
 .vp-doc tr:nth-child(2n) { background: color-mix(in srgb, var(--vp-c-bg-soft) 50%, transparent); }
