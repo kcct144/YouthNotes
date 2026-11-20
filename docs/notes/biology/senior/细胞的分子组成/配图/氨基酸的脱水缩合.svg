@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="414" viewBox="0 0 640 414" role="img" aria-labelledby="title desc">
+  <title id="title">两个氨基酸脱水缩合形成二肽</title>
+  <desc id="desc">蓝框分别标出参与反应的羧基和氨基，虚线框中的 OH 和 H 形成一分子水。绿框覆盖二肽中的 C(=O)–NH 结构，绿色粗线标出新形成的碳氮键。</desc>
+  <rect x="1" y="1" width="638" height="412" rx="13" fill="#f8faf6" stroke="#c7d6cb" stroke-width="2"/>
+
+  <g fill="#e9f0f7" stroke="#7697b5" stroke-width="1.5">
+    <rect x="166" y="86" width="135" height="74" rx="8"/>
+    <rect x="337" y="111" width="104" height="89" rx="8"/>
+  </g>
+  <path d="M233 77V86 M389 77V111" fill="none" stroke="#7697b5" stroke-width="1.5"/>
+  <rect x="176" y="244" width="133" height="129" rx="8" fill="#dceee2" stroke="#81a893" stroke-width="1.5"/>
+
+  <g font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="22" text-anchor="middle" fill="#263830">
+    <text x="160" y="37">氨基酸 1</text>
+    <text x="480" y="37">氨基酸 2</text>
+    <g font-weight="600" fill="#254965">
+      <text x="233" y="71">羧基 —COOH</text>
+      <text x="389" y="71">氨基 —NH₂</text>
+    </g>
+    <text x="248" y="399">二肽</text>
+    <text x="304" y="224" text-anchor="end">脱水缩合</text>
+    <text x="242" y="362" font-weight="600" fill="#155c45">肽键</text>
+  </g>
+
+  <g fill="#fae7d9" stroke="#9a4827" stroke-width="1.5">
+    <rect x="239" y="120" width="54" height="33" rx="6" stroke-dasharray="4 3"/>
+    <rect x="345" y="120" width="37" height="33" rx="6" stroke-dasharray="4 3"/>
+    <rect x="541" y="276" width="65" height="38" rx="6"/>
+  </g>
+
+  <g fill="none" stroke="#263830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 反应物中的单键和羰基双键 -->
+    <g transform="translate(0 36)">
+      <path d="M72 100H101 M130 100H175 M207 100H242 M116 78V87 M116 113V129 M187 78V87 M195 78V87"/>
+      <path d="M377 100H405 M434 100H483 M511 100H546 M420 113V129 M497 78V87 M497 113V129"/>
+    </g>
+    <!-- 反应箭头 -->
+    <path d="M320 201V238 M313 231L320 238L327 231"/>
+    <!-- 产物中的原有键 -->
+    <path transform="translate(0 42)" d="M83 253H118 M148 253H192 M291 253H339 M369 253H400 M133 231V240 M133 266V282 M203 231V240 M211 231V240 M277 266V282 M354 231V240 M354 266V282"/>
+  </g>
+  <path d="M221 295H263" fill="none" stroke="#155c45" stroke-width="4" stroke-linecap="round"/>
+  <path d="M242 297V338" fill="none" stroke="#155c45" stroke-width="1.6"/>
+
+  <g font-family="Arial, sans-serif" font-size="25" text-anchor="middle" fill="#172d24">
+    <g transform="translate(0 36)">
+      <text x="46" y="109">H₂N</text>
+      <text x="116" y="109">C</text>
+      <text x="116" y="73">H</text>
+      <text x="116" y="150">R₁</text>
+      <text x="191" y="109">C</text>
+      <text x="191" y="73">O</text>
+      <text x="266" y="109" fill="#893d20">OH</text>
+      <text x="320" y="109">+</text>
+      <text x="363" y="109" fill="#893d20">H</text>
+      <text x="420" y="109">N</text>
+      <text x="420" y="150">H</text>
+      <text x="497" y="109">C</text>
+      <text x="497" y="73">H</text>
+      <text x="497" y="150">R₂</text>
+      <text x="588" y="109">COOH</text>
+    </g>
+
+    <g transform="translate(0 42)">
+      <text x="58" y="262">H₂N</text>
+      <text x="133" y="262">C</text>
+      <text x="133" y="226">H</text>
+      <text x="133" y="303">R₁</text>
+      <text x="207" y="262">C</text>
+      <text x="207" y="226">O</text>
+      <text x="277" y="262">N</text>
+      <text x="277" y="303">H</text>
+      <text x="354" y="262">C</text>
+      <text x="354" y="226">H</text>
+      <text x="354" y="303">R₂</text>
+      <text x="441" y="262">COOH</text>
+      <text x="515" y="262">+</text>
+      <text x="573" y="262" fill="#893d20">H₂O</text>
+    </g>
+  </g>
+</svg>
